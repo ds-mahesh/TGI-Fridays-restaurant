@@ -470,7 +470,7 @@ breadcrumbScheme.push({
               </div>
           }
         </div>
-        <div className="maingetimage" style={{paddingLeft:"150px" ,paddingRight:"150px",paddingBottom:"20px"}}>
+        <div className="maingetimage" style={{paddingLeft:"140px" ,paddingRight:"140px",paddingBottom:"20px"}}>
         <div className="getimagecard" style={{display:"flex" }}>
         <img src={c_getdirectioncardimage.image.url} alt={''} />
           <p style={{fontSize:"20px"}} >{c_getdirectioncardimage.description} </p>
