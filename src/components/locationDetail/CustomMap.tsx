@@ -4,7 +4,7 @@ import marker from "../../images/MGMpin.svg";
 
 const containerStyle = {
   width: "100%",
-  height: "100%",
+  height: "70%",
 };
 
 var center = {

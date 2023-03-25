@@ -366,7 +366,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
 .address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto  }
 .availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
-.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[25rem] lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
+.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0 lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
 .map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
 
 .about-sec{@apply  lg:bg-light-grey relative px-5 mt-0 lg:mt-7 pt-0 lg:py-12 lg:px-14   }
@@ -686,7 +686,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .bottomfooterlink {padding-top: 20px;}
 
 /* photoslider---------- */
-.menuslider {padding-left: 150px; padding-right: 150px;}
+.menuslider {padding-left: 140px; padding-right: 140px;}
 .menues {padding: 5px;}
 .menues img {height: 320px;}
 .ctabtn {background-color: #D31A21; color: #fff; border: 1px solid #fff; font-family:  "gothic", Arial, sans-serif;}
@@ -705,7 +705,14 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   font-size: 40px;
 }
 
-
-
-
+.tgiborndetails {display: flex; padding: 60px 140px;}
+.details p {font-size: 20px; line-height: 1.5;}
+.details h1 {text-transform: uppercase; font-family: "gothic-bold", Arial, sans-serif; font-size: 26px; margin-bottom: 0.75em; font-weight: bold;}
+.details {width: 50%;}
+.tgilogo {margin-left: 8.33333333%; width: 41.66666667%;}
+.amenities {padding: 50px 120px;}
+.amenities .mainheading{font-family: "gothic-bold", Arial, sans-serif; font-size: 26px; text-align: center; font-weight: bolder; text-transform: uppercase;}
+.container {display: flex; padding-top: 25px ;}
+.amnamelist .amenitiesname {font-family: "gothic-bold", Arial, sans-serif; text-transform: uppercase; margin-top: 0.75em; font-weight: bold; font-size: 16px; color: black;}
+.amenatieslist {font-family: "gothic", Arial, sans-serif; font-size: 17px; font-weight: 500;  margin-top: 0.75em; color: black;}
 

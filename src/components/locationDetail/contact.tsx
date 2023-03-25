@@ -26,60 +26,25 @@ const Contact = (props: any) => {
   } = props;
   return (
     <>
-      <div className="address-main-sec">
-        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
 
-        <div className="icon-row content-col">
-          <div className="icon">
-            {" "}
-            <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
-          </div>
-          <div className="  address-text notHighlight">
-            {address.line1}
-            <div>{address.line2 && <div>{address.line2}</div>}</div>
-            <div>{address.city}</div>
-            <div>{address.postalCode}</div>
-          </div>
-        </div>
-
-        {phone ? (
-          <div className="icon-row">
-            <div className="icon">
-              {" "}
-              <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" />
-            </div>
-            <div className="content-col">
-              <a id="address" className=" location-phn" href={`tel:${phone}`}>
-                {phone}
-              </a>
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
-
-        <ul className="">
-          <li className="button-bx direction-button">
-            <GetDirection
-              buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
-              address={address}
-              latitude={latitude}
-              longitude={longitude}
-            />
-          </li>
-        </ul>
-
-        <div className="map-sec">
-          <CustomMap prop={yextDisplayCoordinate} />
-        </div>
-
-      </div>
-
+      {/* <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4> */}
+      <div>
+      <ul className="">
+        <li className="button-bx direction-button">
+          <GetDirection
+            buttonText={c_getDirectionsCTAText ? c_getDirectionsCTAText : StaticData.getDirection}
+            address={address}
+            latitude={latitude}
+            longitude={longitude}
+          />
+        </li>
+      </ul>
+      
       {hours && typeof hours.monday != "undefined" ? (
         <div className="hours">
           <div className="hours-sec">
             <div className="title-with-link-1">
-              <h4 className="box-title">{"Store Opening Hours"}</h4>
+              <h4 className="box-title">{"RESTAURANT HOURS"}</h4>
             </div>
             <div className="hours-div mb-5 md:mb-1 flex flex-col">
               {hours.holidayHours && typeof hours.reopenDate == "undefined" ? (
@@ -111,6 +76,33 @@ const Contact = (props: any) => {
       ) : (
         ""
       )}
+      </div>
+      <div className="map-sec">
+       
+        <CustomMap prop={yextDisplayCoordinate} />
+       
+     
+      <div className="icon-row content-col">
+        <div className="  address-text notHighlight">
+          ADDRESS : {address.line1} ,  <div>{address.region} {address.postalCode}</div>
+          {/* <div>{address.city}</div> */}
+          <div>{address.line2 && <div>{address.line2}</div>}</div>
+        </div>
+      </div>
+
+      {phone ? (
+        <div className="icon-row">
+          <div className="content-col">
+            <a id="address" className=" location-phn" href={`tel:${phone}`}>
+              PHONE : {phone}
+            </a>
+          </div>
+        </div>
+        
+      ) : (
+        ""
+      )}
+       </div>
     </>
   );
 };

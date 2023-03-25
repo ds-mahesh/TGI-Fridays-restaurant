@@ -86,10 +86,10 @@ const Footer = (props: any) => {
 							<p>{props?._site?.c_bootomFooterData.footerDescription}</p>
 						</div>
 						<div className="bottomfooterlink">
-						<ul className="bottomfooterlist" >
+						<ul className="bottomfooterlist flex space-x-4" >
 							{props?._site?.c_bootomFooterData.footerLinks.map((link: any, i: any) => (
 								
-									<li>
+									<li className="">
 										<a key={i} href={link.link} >
 											{link.label}
 										</a>
