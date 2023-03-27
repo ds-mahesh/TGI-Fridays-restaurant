@@ -5,13 +5,13 @@ import { Options } from '@splidejs/splide';
 
 
 const PhotoSlider = (props: any, index: any) => {
-  const { photoGallery, height, width, c_newsStore, c_theDivingBoard, c_iTeamUp, c_giftCard } = props;
+  const { photoGallery, height, width,} = props;
 
   const mainOptions: Options = {
     type: 'loop',
     perPage: 4,
     perMove: 3,
-    pagination: false,
+    pagination: true,
 
   };
 
@@ -25,9 +25,11 @@ const PhotoSlider = (props: any, index: any) => {
       <img  src={link.menuimage?.url} alt={''} />
       </div>
       <div className="orderbtn">
-      <a className="ctabtn btndefault" href={link.menuorder.link}>
+      <button className="ctabtn btndefault" >
+       
         {link.menuorder.label}
-      </a>
+        
+      </button>
       </div>
       </div>
     </SplideSlide>

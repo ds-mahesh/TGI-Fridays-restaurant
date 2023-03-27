@@ -29,6 +29,8 @@ import Nav from "../components/layouts/Nav";
 import Footer from "../components/layouts/footer";
 import Menu from "../components/locationDetail/Menu";
 import PhotoSlider from "../components/locationDetail/PhotoSlider";
+import Reviews from "../components/locationDetail/Reviews";
+import GetDirection from "../components/commons/GetDirection"
 import PhotoGallery from "../components/locationDetail/PhotoGallery";
 import About from "../components/locationDetail/About";
 import Breadcrumb from "../components/layouts/Breadcrumb";
@@ -74,6 +76,10 @@ export const config: TemplateConfig = {
       "c_getdirectioncardimage",
       "c_tGIHistory",
       "c_tGIAmenities",
+      "c_dineMenues",
+      "c_hoursAmenities",
+      "c_viewAllAmenities",
+      "c_tGIReviews"
 
     ],
     // Defines the scope of entities that qualify for this stream.
@@ -282,9 +288,42 @@ const Location: Template<ExternalApiRenderData> = ({
     c_dishesMenu,
     c_getdirectioncardimage,
     c_tGIHistory,
-    c_tGIAmenities
+    c_tGIAmenities,
+    c_dineMenues,
+    c_tGIReviews,
+    c_hoursAmenities
 
   } = document;
+
+  // const Hoursamenities = c_tGIReviews.totalOfReview.reting.map((e: any, index: number) => (
+  // <div className="sortofamenities">
+  // <ul>
+  //   <li>{e.tGIlist.label}</li>
+  // </ul>
+  // </div>
+  // ))
+
+  const Totalreview = c_tGIReviews.totalOfReview.reting.map((e: any, index: number) => (
+    <img className="retingstar " src={e.url} alt={''} />
+  ))
+
+
+  const Whosereview = c_tGIReviews.whoseReviewHeading.map((e: any, index: number) => (
+    <div className="reviews">
+      <div className="headingreview">
+        {e.whoseReview.label}
+      </div>
+      <div className="retingimgcount">
+        {e.reviewReting.map((link: any, i: any) => (
+          <img className="retingimage" src={link.url} alt={""} />
+        ))}
+        <p>{e.reviewCount}</p>
+      </div>
+      <div className="reviewlink">
+        <a href={e.reviewLink.link}> {e.reviewLink.label}</a>
+      </div>
+    </div>
+  ))
 
 
 
@@ -467,7 +506,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
               <Contact address={address}
                 phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
-                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} hours={hours} ></Contact>
+                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} c_dishesMenu={c_dishesMenu} hours={hours} c_hoursAmenities={c_hoursAmenities} ></Contact>
               {
                 hours ?
                   <div className="map-sec" id="map_canvas">
@@ -478,14 +517,38 @@ const Location: Template<ExternalApiRenderData> = ({
                   </div>
               }
             </div>
-            <div className="maingetimage" style={{ paddingLeft: "140px", paddingRight: "140px", paddingBottom: "20px" }}>
-              <div className="getimagecard" style={{ display: "flex" }}>
-                <img src={c_getdirectioncardimage.image.url} alt={''} />
-                <p style={{ fontSize: "20px" }} >{c_getdirectioncardimage.description} </p>
+            <div className="maingetimage">
+              <div className="getimagecard">
+                <div className="foodimage">
+                  <img src={c_getdirectioncardimage.image.url} alt={''} />
+                </div>
+                <div className="mainfoodtext">
+                <div className="foodtext">
+                  <div className="foodtextheading">DEAL IN {address.line2} ,{address.region}</div>
+                  <div className="fooddescription" style={{ fontSize: "20px" }} >{c_getdirectioncardimage.description} </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="menuslider">
+              <h1>WHAT'S HOT IN {address.city}, {address.region}</h1>
               <PhotoSlider c_dishesMenu={c_dishesMenu} />
+            </div>
+            <div className="dinemenus">
+              {/* <a href={c_dineMenues.link}> */}
+              <button>{c_dineMenues.label} </button>
+              {/* </a> */}
+            </div>
+            <div className="mainreview">
+              <div className="reviewheading"><h6>{c_tGIReviews.reviewHeading}</h6></div>
+              <div className="totalreview">
+                <div className="treview">
+                  {Totalreview}{c_tGIReviews.totalOfReview.total}
+                </div>
+              </div>
+              <div className="whosereview  flex space-x-9">
+                {Whosereview}
+              </div>
             </div>
             <div className="maintgiborn">
               <div className="tgiborndetails">
@@ -499,33 +562,33 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
             </div>
             <div className="amenities">
-            <div className="mainheading">
-              {c_tGIAmenities.mainHeading}
-            </div>
-            <div className="Amenitiesnamelist container flex space-x-9">
-              {c_tGIAmenities.tginames.map((element:any) =>{
-                return (
-                  <>
-                <div className="amnamelist">
-                  <div className="amenitiesname">{element.headname} </div>
-                  <div>
-                    {element.tGIlist.map((link:any)=>{
-                      return (
-                        <>
-                        <div  className="amenatieslist">{link.label}</div>
-                        </>
-                      )
-                    })}
-                  </div>
-                  </div>
-                  </>
-                )
-               
-               
+              <div className="mainheading">
+                {c_tGIAmenities.mainHeading}
+              </div>
+              <div className="Amenitiesnamelist container flex space-x-9">
+                {c_tGIAmenities.tginames.map((element: any) => {
+                  return (
+                    <>
+                      <div className="amnamelist">
+                        <div className="amenitiesname">{element.headname} </div>
+                        <div>
+                          {element.tGIlist.map((link: any) => {
+                            return (
+                              <>
+                                <div className="amenatieslist">{link.label}</div>
+                              </>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </>
+                  )
+
+
 
                 })}
 
-            </div>
+              </div>
             </div>
 
             {/* <div className="nearby-sec">
