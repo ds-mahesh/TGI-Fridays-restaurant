@@ -93,15 +93,17 @@ const Contact = (props: any) => {
             ""
           )}
           <div className="hoursamenities">
-            <h5>{props.c_hoursAmenities.headname}</h5>
-            <div className="sortlist">
-              {props.c_hoursAmenities.tGIlist.map((link: any, i: any) => (
-                <ul>
-                  <li>
-                    {link.label}
-                  </li>
-                </ul>
-              ))}
+            <div className="am-list">
+              <h5>{props.c_hoursAmenities.headname}</h5>
+              <div className="sortlist">
+                {props.c_hoursAmenities.tGIlist.map((link: any, i: any) => (
+                  <ul>
+                    <li>
+                      {link.label}
+                    </li>
+                  </ul>
+                ))}
+              </div>
             </div>
           </div>
         </div>

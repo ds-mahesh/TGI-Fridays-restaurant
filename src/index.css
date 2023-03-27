@@ -362,7 +362,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-bx, .phone-bx{ @apply text-base  }
 .address-bx h4{@apply text-red font-normal text-base uppercase }
 .phone-bx h4{@apply text-red font-normal text-base uppercase }
-.hours{ order: 0; @apply bg-hours-bg mt-5  lg:mt-0 w-full md:w-[48%] lg:w-[24.8125rem] p-4 md:p-6 lg:mr-4}
+/* .hours{ order: 0; @apply bg-hours-bg mt-5  lg:mt-0 w-full md:w-[48%] lg:w-[24.8125rem] p-4 md:p-6 lg:mr-4} */
+.hours{ order: 0; @apply   lg:mt-0 w-full md:w-[48%] lg:w-[24.8125rem]  lg:mr-4}
 .address-with-availablity{  @apply flex  items-start flex-col}
 .address-with-availablity .address{  @apply pr-5}
 .address-with-availablity > div{  @apply flex-1}
