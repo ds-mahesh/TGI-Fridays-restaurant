@@ -85,7 +85,7 @@ export const config: TemplateConfig = {
       "c_hoursAmenities",
       "c_viewAllAmenities",
       "c_tGIReviews",
-      "c_onlineorderHours"
+      // "c_onlineorderHours"
 
     ],
     // Defines the scope of entities that qualify for this stream.
