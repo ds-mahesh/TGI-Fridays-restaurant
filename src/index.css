@@ -348,7 +348,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 /* address sec */
 /* .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11} */
-.location-information{  @apply flex flex-wrap w-full justify-between  mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
+.location-information{  @apply flex flex-wrap w-full  }
+.location-information {padding: 40px 140px;}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg}
 .address-text {font-size: 18px; padding-top: 20px; font-family: "gothic", Arial, sans-serif;}
@@ -379,7 +380,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
 .address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto  }
 .availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
-.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0 lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
+.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0 lg:h-auto  lg:w-[calc(100%_-_46.625rem)]}
+.map-sec {height: 30rem;}
 .map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
 
 .about-sec{@apply  lg:bg-light-grey relative px-5 mt-0 lg:mt-7 pt-0 lg:py-12 lg:px-14   }

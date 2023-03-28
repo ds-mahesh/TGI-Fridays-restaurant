@@ -84,7 +84,8 @@ export const config: TemplateConfig = {
       "c_dineMenues",
       "c_hoursAmenities",
       "c_viewAllAmenities",
-      "c_tGIReviews"
+      "c_tGIReviews",
+      "c_onlineorderHours"
 
     ],
     // Defines the scope of entities that qualify for this stream.
@@ -520,7 +521,7 @@ const Location: Template<ExternalApiRenderData> = ({
                 <Contact address={address}
                   phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
                   yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} c_dishesMenu={c_dishesMenu} hours={hours} c_hoursAmenities={c_hoursAmenities} ></Contact>
-                {
+                {/* {
                   hours ?
                     <div className="map-sec" id="map_canvas">
                       <CustomMap prop={yextDisplayCoordinate ? yextDisplayCoordinate : displayCoordinate} />
@@ -528,7 +529,7 @@ const Location: Template<ExternalApiRenderData> = ({
                     <div className="map-sec without-hours" id="map_canvas">
                       <CustomMap prop={yextDisplayCoordinate ? yextDisplayCoordinate : displayCoordinate} />
                     </div>
-                }
+                } */}
               </div>
             </div>
             <div className="maingetimage">
