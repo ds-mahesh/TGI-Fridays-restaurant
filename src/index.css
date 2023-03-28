@@ -142,7 +142,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
    
 .location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7}
 .result-list .location{ @apply first:mt-0}
-.location .button-bx .btn{@apply w-[9.75rem] bg-Dark-red font-second-main-font text-lg  border-none text-white    }
+.location .button-bx .btn{@apply  bg-Dark-red font-second-main-font text-lg  border-none text-white    }
 .location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black underline  }
 .location .button-bx .btn + .btn{  @apply mt-2 ml-2 md:mt-0 hover:no-underline   w-auto }
 .location .button-bx .btn:hover svg{@apply !fill-red }
@@ -347,7 +347,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .banner-text h1{ @apply text-red text-[2.4375rem] mb-3  mt-8 font-second-main-font}
 
 /* address sec */
-.location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
+/* .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11} */
+.location-information{  @apply flex flex-wrap w-full justify-between  mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg}
 .address-text {font-size: 18px; padding-top: 20px; font-family: "gothic", Arial, sans-serif;}
@@ -812,3 +813,20 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .amenatieslist {font-family: "gothic", Arial, sans-serif; font-size: 17px; font-weight: 500;  margin-top: 0.75em; color: black;}
 
 .mainhoursamenities {display: flex;}
+
+.location .button-bx {
+  padding-left: 1.75rem;
+  display: flex;
+}
+.location-name-miles h2 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  line-height: 1.25;
+  margin-left: 2rem;
+}
+.address-with-availablity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+}

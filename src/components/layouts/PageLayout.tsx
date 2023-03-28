@@ -2,6 +2,8 @@ import * as React from "react";
 import Footer from "./footer";
 import Nav from "./Nav";
 import Header from "./header";
+import FilterSearch from "../locatorPage/FilterSearch";
+import { StaticData } from "../../../sites-global/staticData";
 
 type Props = {
   title?: string;

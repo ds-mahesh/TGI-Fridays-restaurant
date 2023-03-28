@@ -11,6 +11,7 @@ import { nearByLocation } from "../types/nearByLocation";
 import Logo from "../images/logo-header.svg"
 import offerBanner from "../images/offer-banner.jpg"
 import IframeMap from "../components/locationDetail/IframeMap";
+import SearchLayout from "../components/locatorPage/SearchLayout";
 import "../index.css";
 import {
   Template,
@@ -40,6 +41,7 @@ import StoreHighlight from "../components/locationDetail/SoreHighlight";
 import OpenClose from "../components/commons/openClose";
 import Faq from "../components/locationDetail/Faqs";
 import { StaticData } from "../../sites-global/staticData";
+// import Locationsearch from "../components/layouts/Locationsearch"
 
 import { apikey_for_entity, baseuRL, stagingBaseurl, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie, favicon } from "../../sites-global/global";
 import {
@@ -72,6 +74,9 @@ export const config: TemplateConfig = {
       "yextDisplayCoordinate",
       "displayCoordinate",
       "cityCoordinate",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.meta.entityType",
       "c_dishesMenu",
       "c_getdirectioncardimage",
       "c_tGIHistory",
@@ -141,7 +146,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   document,
 }): HeadConfig => {
   return {
-    title: document.c_meta_title ? document.c_meta_title : `${document.name} Store of MGM Timber`,
+    title: document.c_meta_title ? document.c_meta_title : `${document.name} Store of TGI Fridays`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -149,7 +154,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
+          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} TGI Restaurant in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
         },
       },
 
@@ -184,7 +189,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           property: "og:description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
+          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} TGI Restaurant Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
         },
       },
       {
@@ -219,14 +224,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           name: "twitter:title",
-          content: document.c_meta_title ? document.c_meta_title : `${document.name} Store of MGM Timber`,
+          content: document.c_meta_title ? document.c_meta_title : `${document.name} Store of TGI Fridays`,
         },
       },
       {
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
+          content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} TGI Restaurant in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
         },
       },
       /// twitter tag
@@ -285,6 +290,7 @@ const Location: Template<ExternalApiRenderData> = ({
     yextDisplayCoordinate,
     displayCoordinate,
     cityCoordinate,
+    dm_directoryParents,
     c_dishesMenu,
     c_getdirectioncardimage,
     c_tGIHistory,
@@ -492,7 +498,13 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-
+          
+          <BreadCrumbs
+              name={name}
+              address={address}
+              parents={dm_directoryParents}
+              baseUrl={relativePrefixToRoot}
+            ></BreadCrumbs>
 
             <div className="container">
               <div className='banner-text banner-dark-bg justify-center '>
@@ -502,20 +514,22 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>  */}
               </div>
             </div>
-            <div className="location-information">
+            <div className="location-all-detail">
+              <div className="location-information">
 
-              <Contact address={address}
-                phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
-                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} c_dishesMenu={c_dishesMenu} hours={hours} c_hoursAmenities={c_hoursAmenities} ></Contact>
-              {
-                hours ?
-                  <div className="map-sec" id="map_canvas">
-                    <CustomMap prop={yextDisplayCoordinate ? yextDisplayCoordinate : displayCoordinate} />
-                  </div> :
-                  <div className="map-sec without-hours" id="map_canvas">
-                    <CustomMap prop={yextDisplayCoordinate ? yextDisplayCoordinate : displayCoordinate} />
-                  </div>
-              }
+                <Contact address={address}
+                  phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
+                  yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} c_dishesMenu={c_dishesMenu} hours={hours} c_hoursAmenities={c_hoursAmenities} ></Contact>
+                {
+                  hours ?
+                    <div className="map-sec" id="map_canvas">
+                      <CustomMap prop={yextDisplayCoordinate ? yextDisplayCoordinate : displayCoordinate} />
+                    </div> :
+                    <div className="map-sec without-hours" id="map_canvas">
+                      <CustomMap prop={yextDisplayCoordinate ? yextDisplayCoordinate : displayCoordinate} />
+                    </div>
+                }
+              </div>
             </div>
             <div className="maingetimage">
               <div className="getimagecard">
@@ -523,15 +537,15 @@ const Location: Template<ExternalApiRenderData> = ({
                   <img src={c_getdirectioncardimage.image.url} alt={''} />
                 </div>
                 <div className="mainfoodtext">
-                <div className="foodtext">
-                  <div className="foodtextheading">DEAL IN {address.line2} ,{address.region}</div>
-                  <div className="fooddescription" style={{ fontSize: "20px" }} >{c_getdirectioncardimage.description} </div>
+                  <div className="foodtext">
+                    <div className="foodtextheading">DEAL IN {address.line2} ,{address.region}</div>
+                    <div className="fooddescription" style={{ fontSize: "20px" }} >{c_getdirectioncardimage.description} </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="menuslider">
-              <h1>WHAT'S HOT IN {address.city}, {address.region}</h1>
+              <h1>WHAT'S HOT IN {address.line2}, {address.region}</h1>
               <PhotoSlider c_dishesMenu={c_dishesMenu} />
             </div>
             <div className="dinemenus">
