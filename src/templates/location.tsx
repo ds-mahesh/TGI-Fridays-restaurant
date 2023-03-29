@@ -85,6 +85,7 @@ export const config: TemplateConfig = {
       "c_hoursAmenities",
       "c_viewAllAmenities",
       "c_tGIReviews",
+      "deliveryHours"
       // "c_onlineorderHours"
 
     ],
@@ -507,9 +508,9 @@ const Location: Template<ExternalApiRenderData> = ({
               baseUrl={relativePrefixToRoot}
             ></BreadCrumbs>
 
-            <div className="container">
-              <div className='banner-text banner-dark-bg justify-center '>
-                <h1 className="">{name}, {address.region}</h1>
+            <div className="nameheading ">
+              <div className='banner-text'>
+                <h1 className="">{name}, {address.region}</h1><hr/>
                 {/* <div className="openClosestatus detail-page closeing-div">
                   <OpenClose timezone={timezone} hours={hours} />
                 </div>  */}

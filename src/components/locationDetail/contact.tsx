@@ -38,7 +38,7 @@ const Contact = (props: any) => {
     <>
 
       {/* <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4> */}
-      <div>
+      <div >
         <div className="mapsecorderbtn flex space-x-4">
           <button className="mapsecctabtn " >ORDER NOW
           </button>
@@ -116,19 +116,18 @@ const Contact = (props: any) => {
         <div className="icon-row content-col">
           <hr />
           <div className="  address-text notHighlight">
-            <span>ADDRESS :</span>
+            <span className="addhead">ADDRESS :</span>
             <span>{address.line1} </span>
             <span>{address.line2 && address.line2} , {address.region} {address.postalCode}</span>
 
             {/* <div>{address.city}</div> */}
 
             <div className="address-extrades">{address.extraDescription}</div>
-          </div>
-          {phone ? (
+            {phone ? (
             <div className="icon-row">
               <div className="content-col">
                 <a id="address" className=" location-phn" href={`tel:${phone}`}>
-                  PHONE : {phone}
+                 <span> PHONE : </span>{phone}
                 </a>
               </div>
             </div>
@@ -136,12 +135,9 @@ const Contact = (props: any) => {
           ) : (
             ""
           )}
-
-        </div>
-
-
-        <hr />
-
+          </div>
+                 </div>
+       <hr />
       </div>
     </>
   );

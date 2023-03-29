@@ -295,7 +295,7 @@ const City: Template<TemplateRenderProps> = ({
       detailPageUrl = `${entity.id}-${result}.html`
     }
     else {
-      detailPageUrl = `${entity.slug.toString()}.html`
+      detailPageUrl = `${entity.id.toString()}.html`
       console.log(detailPageUrl,"url");
     }
     return (

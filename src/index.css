@@ -38,9 +38,9 @@ body{ @apply font-main-font text-sm md:text-base text-gray}
 h1 {@apply text-4xl font-normal;}
 h2 {  @apply text-2xl font-normal;}
 .centered-container {  @apply mx-auto px-5 md:px-14 max-w-screen-xl;}
-.container-lg{  @apply mx-auto px-5 md:px-14 max-w-[120rem];}
+/* .container-lg{  @apply mx-auto px-5 md:px-14 max-w-[120rem];}
 .container-custom{ @apply max-w-[87.5rem] mx-auto px-4 lg:px-6 xl:px-0}
-.container{ @apply px-4 lg:px-5 max-w-full xl:max-w-screen-xl 2xl:max-w-screen-2xl}
+.container{ @apply px-4 lg:px-5 max-w-full xl:max-w-screen-xl 2xl:max-w-screen-2xl} */
 #root{  @apply flex flex-col min-h-screen}
 .section { @apply mt-8 mb-16;}
 .primary-cta { @apply bg-Dark-red hover:bg-red;}
@@ -149,7 +149,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .map-count{ @apply absolute text-white left-1/2 -translate-x-1/2 top-2 md:top-1 2xl:top-1 font-second-main-font text-xs }
 #result-1 .result-inner{ @apply pt-0 md:pt-4}
 #result-1 .result-inner .availablity-content{@apply mt-2}
-.location-phn{ @apply underline hover:!no-underline text-lg }
+.location-phn{ @apply underline hover:!no-underline  }
 .fliter-sec{ @apply mt-2 flex items-start sm:items-center justify-start sm:justify-between  flex-col sm:flex-row}
 .location .result-inner .green-dot, .location .result-inner .red-dot{ @apply  flex justify-center items-center flex-row-reverse  }
 .location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
@@ -182,9 +182,10 @@ table.day-hrs td{ @apply   text-right  }
   @apply bg-location-bg
 } */
 table.day-hrs .dayName {
-  font-size: 1.29rem;
+  font-size: 18px;
   line-height: 1.75rem;
-  font-family: "gothic", Arial, sans-serif; }
+  font-family: "gothic", Arial, sans-serif; 
+  color: #000;}
 table.day-hrs tr:last-child td{  @apply border-b-0}
 table.day-hrs .dayName{ @apply text-xl md:text-xl capitalize pl-0 py-0 text-left }
 table.day-hrs .currentDay .dayName{  @apply relative  py-1}
@@ -349,7 +350,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 /* address sec */
 /* .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11} */
 .location-information{  @apply flex flex-wrap w-full  }
-.location-information {padding: 40px 140px;}
+.location-information {padding: 40px 140px; padding-bottom: 100px;}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg}
 .address-text {font-size: 18px; padding-top: 20px; font-family: "gothic", Arial, sans-serif;}
@@ -380,8 +381,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
 .address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto  }
 .availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
-.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0 lg:h-auto  lg:w-[calc(100%_-_46.625rem)]}
-.map-sec {height: 30rem;}
+.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0 lg:h-auto  lg:w-[calc(100%_-_48.625rem)]}
+.map-sec {height: 30rem; margin-left: auto;}
 .map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
 
 .about-sec{@apply  lg:bg-light-grey relative px-5 mt-0 lg:mt-7 pt-0 lg:py-12 lg:px-14   }
@@ -701,8 +702,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .bottomfooterlink {padding-top: 20px;}
 
 /* mapsec--------------- */
-.hoursamenities h5 {font-size: 1.375rem; text-transform: uppercase;}
-.sortlist ul li {font-family: "gothic", Arial, sans-serif; font-size: 18px; padding: 8px 0;}
+.hoursamenities h5 {font-size: 1.375rem; text-transform: uppercase; font-weight: bold; color: #000;}
+.sortlist ul li {font-family: "gothic", Arial, sans-serif; font-size: 18px; padding: 8px 0; color: #000;}
 .sortlist {padding: 10px 0;}
 .button-bx .btn {
   padding-top: 0.5rem;
@@ -810,11 +811,18 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .tgilogo {margin-left: 8.33333333%; width: 41.66666667%;}
 .amenities {padding: 50px 120px;}
 .amenities .mainheading{font-family: "gothic-bold", Arial, sans-serif; font-size: 26px; text-align: center; font-weight: bolder; text-transform: uppercase;}
-.container {display: flex; padding-top: 25px ;}
+.nameheading {display: flex; padding-top: 25px ;}
 .amnamelist .amenitiesname {font-family: "gothic-bold", Arial, sans-serif; text-transform: uppercase; margin-top: 0.75em; font-weight: bold; font-size: 16px; color: black;}
 .amenatieslist {font-family: "gothic", Arial, sans-serif; font-size: 17px; font-weight: 500;  margin-top: 0.75em; color: black;}
-
-.mainhoursamenities {display: flex;}
+.Amenitiesnamelist{padding-top: 20px;}
+.mainhoursamenities {display: flex; margin-top: 100px;}
+.mapsecwaitlist {width: 12rem;}
+.banner-text {padding: 0 140px;}
+.address-text .addhead{font-weight: bold;}
+.address-text span {color: #000;}
+.location-phn span{font-weight: bold; color: #000;}
+.location-phn {font-size: 18px; color: #000;}
+.address-extrades {color: #000;}
 
 .location .button-bx {
   padding-left: 1.75rem;
@@ -832,3 +840,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   align-items: flex-start;
   margin-left: 2rem;
 }
+.hoursamenities {padding-left: 25px;}
+table.day-hrs .time-b {
+  font-size: 18px;
+  line-height: 1.75rem;
+  font-family: "gothic", Arial, sans-serif;
+  color: #000;
+}
+.title-with-link-1 .box-title {font-weight: bold;}
