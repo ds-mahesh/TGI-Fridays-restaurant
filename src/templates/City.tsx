@@ -243,6 +243,7 @@ const City: Template<TemplateRenderProps> = ({
 }) => {
   const {
     name,
+    slug,
     c_addressRegionDisplayName,
     dm_directoryParents,
     dm_directoryChildren,
@@ -295,7 +296,7 @@ const City: Template<TemplateRenderProps> = ({
       detailPageUrl = `${entity.id}-${result}.html`
     }
     else {
-      detailPageUrl = `${entity.id.toString()}.html`
+      detailPageUrl =  entity.id ;
       console.log(detailPageUrl,"url");
     }
     return (
@@ -621,7 +622,7 @@ const City: Template<TemplateRenderProps> = ({
               name={name}
               parents={dm_directoryParents}
               baseUrl={relativePrefixToRoot}
-              address={{}}
+              address={{address}}
             ></BreadCrumbs>
            
             {/* <Banner
