@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'futura_ptdemi';
+  font-family: 'Roboto',Helvetica,Arial,Lucida,sans-serif;
   src: url('./fonts/ftn65-webfont.woff2') format('woff2'),
        url('./fonts/ftn65-webfont.woff') format('woff');
   font-weight: bold;
@@ -654,6 +654,10 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{@apply left-1}
 }
 
+.container-custom ul{padding: 0 80px;}
+
+.country-banner img{width: 100%; padding: 18px 0px;}
+
 /* ---------------header ----------------------- */
 /* titleheader */
 .titlemenu a img { max-width: 2.2rem; height: 2.5rem; }
@@ -747,7 +751,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   background-color: #D31A21;
   color: #fff;
 }
-
+/* food image */
 .getimagecard {display: flex; padding: 60px 140px;}
 .getimagecard .mainfoodtext {width: 50%;}
 .getimagecard .mainfoodtext .foodtext .foodtextheading {font-weight: bold; font-size: 26px;font-family: "gothic-bold", Arial, sans-serif;}
@@ -804,11 +808,15 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   font-size: 40px;
 }
 
+/* tgi detail */
+
 .tgiborndetails {display: flex; padding: 60px 140px;}
 .details p {font-size: 20px; line-height: 1.5;}
 .details h1 {text-transform: uppercase; font-family: "gothic-bold", Arial, sans-serif; font-size: 26px; margin-bottom: 0.75em; font-weight: bold;}
 .details {width: 50%;}
 .tgilogo {margin-left: 8.33333333%; width: 41.66666667%;}
+
+/* all Amenities */
 .amenities {padding: 50px 120px;}
 .amenities .mainheading{font-family: "gothic-bold", Arial, sans-serif; font-size: 26px; text-align: center; font-weight: bolder; text-transform: uppercase;}
 .nameheading {display: flex; padding-top: 25px ;}
@@ -840,6 +848,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   align-items: flex-start;
   margin-left: 2rem;
 }
+
+/* near hours amenities */
 .hoursamenities {padding-left: 25px;}
 table.day-hrs .time-b {
   font-size: 18px;
@@ -848,3 +858,116 @@ table.day-hrs .time-b {
   color: #000;
 }
 .title-with-link-1 .box-title {font-weight: bold;}
+/* search-bar main div */
+
+.searchsec {padding: 20px 0px;}
+.location-main {background-color: #464646; }
+
+
+.usemylocation-detail {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  height: 45px;
+  width: 280px;
+  background-color: transparent;
+  
+}
+.usemylocation-detail:hover {background-color: #D31A21;}
+.usemylocation-detail button span {
+  font-family: "gothic-bold", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.375;
+  font-weight: 600;
+  color: #fff;
+ 
+}
+.usemylocation-detail button {display: flex;}
+.location-heading-filter {width: 350px;}
+.location-heading-filter h1{
+  line-height: 1.75rem;
+font-weight: 600;
+--tw-text-opacity: 1;
+color: #fff;
+text-transform: uppercase;
+font-size: 28px;
+font-family: "gothic-bold", Arial, sans-serif;
+margin: 12px;
+}
+.location-search-bar {display: flex; display: flex;padding: 25px 100px;}
+.search-locationpage  {display: flex; margin-left: 100px;}
+
+.location-search-bx .search-btn{@apply top-0 rounded-none right-0  text-white p-2 w-32 text-center  hover:bg-hover-btn}  
+.location-search-bx .search-btn svg{ @apply mx-auto}
+.location-search-field button{background-color: #D31A21; height: 45px;}
+.location-search-field input{height: 45px; width: 280px; font-family: "gothic-bold", Arial, sans-serif;
+  line-height: 1.75rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.location-search-field {display: flex;}
+.location-search-field input{@apply    py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
+/* .inputsearch {width: 172px;} */
+.or {font-family: "gothic-bold", Arial, sans-serif;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 12px 25px;
+}
+
+
+.country-search-bar {
+  position: absolute;
+bottom: 0;
+right: 0;
+left: 0;
+top: 25%;
+width: 80%;
+margin: 0 auto;
+}
+.country-banner {
+  position: relative;
+}
+.country-search-bar .location-main {
+  background: #00000073;
+  padding: 50px 0px;
+}
+
+.country-search-bar .location-search-bar {
+  display: block;
+}
+
+.country-search-bar .location-heading-filter {
+  width: 100%;
+  margin: 28px auto;
+  text-align: center;
+}
+
+.country-search-bar .location-heading-filter h1{
+      font-size: 50px;
+      font-family: "gothic-bold", Arial, sans-serif;
+      margin-bottom: 1em;
+}
+
+
+.country-search-bar .usemylocation-detail {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  height: 45px;
+  width: 280px;
+  background-color: transparent;
+  background-color: #D31A21;
+  color: #fff;
+  text-decoration: none;
+}

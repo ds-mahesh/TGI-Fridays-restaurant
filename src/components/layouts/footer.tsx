@@ -68,7 +68,7 @@ const Footer = (props: any) => {
 							<p>{props?._site?.c_appDownloadLink.heading}</p>
 							<div className="googlelogo flex space-x-9">
 								{props?._site?.c_appDownloadLink?.iconLogo?.map((link: any, i: any) => (
-									<a href=" ">
+									<a key={i} href=" ">
 										<img key={i} src={link.url} alt={''} />
 									</a>
 								))}
@@ -89,8 +89,8 @@ const Footer = (props: any) => {
 						<ul className="bottomfooterlist flex space-x-4" >
 							{props?._site?.c_bootomFooterData.footerLinks.map((link: any, i: any) => (
 								
-									<li className="">
-										<a key={i} href={link.link} >
+									<li key={i} className="">
+										<a  href={link.link} >
 											{link.label}
 										</a>
 									</li>

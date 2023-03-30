@@ -10,6 +10,9 @@ import { favicon, stagingBaseurl } from "../../sites-global/global";
 // import favicon from "../images/favicon-live.png";
 import Header from "../components/layouts/header";
 import Footer from "../components/layouts/footer";
+import LocationLayout from "../components/layouts/Locationsearch";
+import { SearchHeadlessProvider } from "@yext/search-headless-react";
+import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 import {
   AnalyticsProvider,
   AnalyticsScopeProvider,
@@ -615,7 +618,19 @@ const City: Template<TemplateRenderProps> = ({
           
          /
           <PageLayout _site={_site} templateData={{ __meta, document }}>
-
+          <SearchHeadlessProvider
+          experienceKey={AnswerExperienceConfig.experienceKey}
+          locale={AnswerExperienceConfig.locale}
+          apiKey={AnswerExperienceConfig.apiKey}
+          verticalKey={AnswerExperienceConfig.verticalKey}
+          experienceVersion="STAGING"
+          sessionTrackingEnabled={true}
+          endpoints={AnswerExperienceConfig.endpoints}    
+        >
+          
+          <LocationLayout _site={_site}/>
+     
+        </SearchHeadlessProvider>
             {/* <Header navbar={_site.c_navigationBarLinks}></Header> */}
             {/* <Header personal={_site.c_personal} bussiness={_site.c_business} findAStore={_site.c_findAStore} networkStatusChecker={_site.c_networkStatusChecker}></Header> */}
             <BreadCrumbs

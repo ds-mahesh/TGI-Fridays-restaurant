@@ -11,7 +11,8 @@ import { nearByLocation } from "../types/nearByLocation";
 import Logo from "../images/logo-header.svg"
 import offerBanner from "../images/offer-banner.jpg"
 import IframeMap from "../components/locationDetail/IframeMap";
-import SearchLayout from "../components/locatorPage/SearchLayout";
+import LocationLayout from "../components/layouts/Locationsearch";
+import { SearchHeadlessProvider } from "@yext/search-headless-react";
 import "../index.css";
 import {
   Template,
@@ -85,7 +86,8 @@ export const config: TemplateConfig = {
       "c_hoursAmenities",
       "c_viewAllAmenities",
       "c_tGIReviews",
-      "deliveryHours"
+      "deliveryHours",
+  
       // "c_onlineorderHours"
 
     ],
@@ -313,18 +315,18 @@ const Location: Template<ExternalApiRenderData> = ({
   // ))
 
   const Totalreview = c_tGIReviews.totalOfReview.reting.map((e: any, index: number) => (
-    <img className="retingstar " src={e.url} alt={''} />
+    <img key={index} className="retingstar " src={e.url} alt={''} />
   ))
 
 
   const Whosereview = c_tGIReviews.whoseReviewHeading.map((e: any, index: number) => (
-    <div className="reviews">
+    <div className="reviews" key={index}>
       <div className="headingreview">
         {e.whoseReview.label}
       </div>
       <div className="retingimgcount">
         {e.reviewReting.map((link: any, i: any) => (
-          <img className="retingimage" src={link.url} alt={""} />
+          <img key={i} className="retingimage" src={link.url} alt={""} />
         ))}
         <p>{e.reviewCount}</p>
       </div>
@@ -451,9 +453,9 @@ const Location: Template<ExternalApiRenderData> = ({
       name: document.name,
     },
   });
-  let imageurl = photoGallery ? photoGallery.map((element: any) => {
-    return element.image.url
-  }) : null;
+  // let imageurl = photoGallery ? photoGallery.map((element: any) => {
+  //   return element.image.url
+  // }) : null;
   console.log(document)
   let bannerimage = c_banner_image && c_banner_image.image.url;
 
@@ -477,7 +479,7 @@ const Location: Template<ExternalApiRenderData> = ({
           },
           openingHoursSpecification: hoursSchema,
           description: description,
-          image: imageurl,
+          // image: imageurl,
           telephone: mainPhone,
           url: `${c_canonical ? c_canonical : stagingBaseurl}${slug ? slug : `${name}`}.html`
         }}
@@ -501,6 +503,19 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
+          <SearchHeadlessProvider
+          experienceKey={AnswerExperienceConfig.experienceKey}
+          locale={AnswerExperienceConfig.locale}
+          apiKey={AnswerExperienceConfig.apiKey}
+          verticalKey={AnswerExperienceConfig.verticalKey}
+          experienceVersion="STAGING"
+          sessionTrackingEnabled={true}
+          endpoints={AnswerExperienceConfig.endpoints}    
+        >
+          
+          <LocationLayout _site={_site}/>
+     
+        </SearchHeadlessProvider>
           
           <BreadCrumbs
               name={name}
@@ -583,16 +598,16 @@ const Location: Template<ExternalApiRenderData> = ({
                 {c_tGIAmenities.mainHeading}
               </div>
               <div className="Amenitiesnamelist container flex space-x-9">
-                {c_tGIAmenities.tginames.map((element: any) => {
+                {c_tGIAmenities.tginames.map((element: any,index:number) => {
                   return (
                     <>
-                      <div className="amnamelist">
+                      <div className="amnamelist" key={index}>
                         <div className="amenitiesname">{element.headname} </div>
                         <div>
-                          {element.tGIlist.map((link: any) => {
+                          {element.tGIlist.map((link: any,index:number) => {
                             return (
                               <>
-                                <div className="amenatieslist">{link.label}</div>
+                                <div className="amenatieslist" key={index}>{link.label}</div>
                               </>
                             )
                           })}

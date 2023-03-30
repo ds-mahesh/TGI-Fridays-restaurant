@@ -18,6 +18,9 @@ import PageLayout from "../components/layouts/PageLayout";
 import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
 import Header from "../components/layouts/header";
 import Footer from "../components/layouts/footer";
+import LocationLayout from "../components/layouts/Locationsearch";
+import { SearchHeadlessProvider } from "@yext/search-headless-react";
+import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 
 
 
@@ -38,6 +41,7 @@ export const config: TemplateConfig = {
       "address",
       "mainPhone",
       "slug",
+      "c_bannerphoto",
       // "c_locatorBannerImage",
       // "c_locatorBannerTitle",
       "dm_directoryParents.name",
@@ -120,11 +124,17 @@ const country: Template<TemplateRenderProps> = ({
     slug,
     _site,
     address,
+    c_bannerphoto,
     c_locatorBannerImage,
     c_locatorBannerTitle,
     dm_directoryParents,
     dm_directoryChildren
   } = document;
+
+  const Bannerimage=c_bannerphoto.map((link:any)=>(
+    <img src={link.url} alt={''}/>
+  ))
+
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
     let detlslug;
 
@@ -192,6 +202,29 @@ const country: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
+        {/* <div className="country-banner">
+          <div className="imgcount">
+               {Bannerimage}
+          </div>
+       
+          <div className="country-search-bar" style={{}}>
+            <SearchHeadlessProvider
+                experienceKey={AnswerExperienceConfig.experienceKey}
+                locale={AnswerExperienceConfig.locale}
+                apiKey={AnswerExperienceConfig.apiKey}
+                verticalKey={AnswerExperienceConfig.verticalKey}
+                experienceVersion="STAGING"
+                sessionTrackingEnabled={true}
+                endpoints={AnswerExperienceConfig.endpoints}    
+              >
+                
+                <LocationLayout _site={_site}/>
+          
+              </SearchHeadlessProvider>
+              </div>
+          </div> */}
+        
+
         <BreadCrumbs
           name={regionNames.of(name)}
           address={address}

@@ -4,9 +4,7 @@ import * as React from "react";
 import { LocationBias, Pagination } from "@yext/search-ui-react";
 
 import { Location } from "../../types/search/locations";
-import LocationCard from "../locatorPage/LocationCard";
 import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
-import { GoogleMaps } from "../locatorPage/GoogleMaps";
 import { useSearchState, Result } from "@yext/search-headless-react";
 import Geocode from "react-geocode";
 import Address from "../commons/Address";
@@ -17,11 +15,8 @@ import Banner from "../locationDetail/banner";
 import LoadingSpinner from "../commons/LoadingSpinner";
 import { breadcrumbhome, center_latitude, center_longitude, googleApikey, search_icn, UseMylocationsvg } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
-
 import FilterSearch from "../locatorPage/FilterSearch";
-import ViewMore from "../locatorPage/ViewMore";
 import VerticalResults from "../VerticalResults";
-import ResultsCount from "../locatorPage/ResultsCount";
 import useFetchResults from "../../hooks/useFetchResults";
 import { Link } from "@mui/material";
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
@@ -30,14 +25,14 @@ var params1: any = { latitude: center_latitude, longitude: center_longitude }
 var mapzoom = 8;
 var centerLatitude = center_latitude;
 var centerLongitude = center_longitude;
-const Locationsearch = (props: any): JSX.Element => {
+const LocationLayout = (props: any): JSX.Element => {
     const [isLoading, setIsloading] = React.useState(true);
     const [check, setCheck] = useState(false);
     type FilterHandle = React.ElementRef<typeof FilterSearch>;
     const filterRef = useRef<FilterHandle>(null);
-    // const locationResults = useFetchResults() || [];
-    // const locationinbuit = useSearchState(state => state.vertical?.results) || [];
-    // const alternateresult = useSearchState(state => state.vertical?.results?.length) || 0;
+    const locationResults = useFetchResults() || [];
+    const locationinbuit = useSearchState(state => state.vertical?.results) || [];
+    const alternateresult = useSearchState(state => state.vertical?.results?.length) || 0;
     const [displaymsg, setDisplaymsg] = useState(false);
     const [inputvalue, setInputValue] = React.useState('');
     // const [inputvalue, setInputValue] = React.useState('');
@@ -47,11 +42,11 @@ const Locationsearch = (props: any): JSX.Element => {
         longitude: 0
     });
     const [offset, setOffset] = React.useState(0);
-    // const searchActions = useSearchActions();
-    // const state = useSearchState(s => s) || [];
-    // const [optionclick, setOptionClick] = useState(true);
+    const searchActions = useSearchActions();
+    const state = useSearchState(s => s) || [];
+    const [optionclick, setOptionClick] = useState(true);
 
-    // const loading = useSearchState(s => s.searchStatus.isLoading);
+    const loading = useSearchState(s => s.searchStatus.isLoading);
 
     var searchKey: any;
     var target;
@@ -82,8 +77,8 @@ const Locationsearch = (props: any): JSX.Element => {
             );
         }
         params1 = {
-            latitude: 54.9191,
-            longitude: -1.3692,
+            latitude: 42.68375,
+            longitude: -73.839631,
         };
         SetNewparam(params1);
         // mapzoom=8;
@@ -183,7 +178,7 @@ const Locationsearch = (props: any): JSX.Element => {
 
     }
 
-    // let bannerimage = props._site.c_locatorBannerImage != undefined ? props._site.c_locatorBannerImage.image.url : '';
+    let bannerimage = props._site.c_locatorBannerImage != undefined ? props._site.c_locatorBannerImage.image.url : '';
 
 
     // const loader =
@@ -225,77 +220,85 @@ const Locationsearch = (props: any): JSX.Element => {
 
     return (
         <>
-            <div className="locator-main">
-                {allowlocation.length > 0 ?
-                    <div className="for-allow">{allowlocation}</div>
-                    : ''}
-                <div className="search-bx">
-                    <div className="location-with-filter">
-                        <h1 className="">{StaticData.FindLocationtext}</h1>
-                    </div>
-                    <div className="search-field">
-                        <FilterSearch
-                            ref={filterRef}
-                            displaymsg={displaymsg}
-                            setDisplaymsg={setDisplaymsg}
-                            customCssClasses={{
-                                filterSearchContainer: "m-2 w-full",
-                                inputElement: "FilterSearchInput pr-[90px]",
-                                optionsContainer: "options"
-                            }}
-                            inputvalue={inputvalue}
-                            setSearchInputValue={setInputValue}
-                            params={params1}
-                            searchOnSelect={true}
-                            searchFields={[
-                                {
-                                    entityType: "location",
-                                    fieldApiName: "address.line1",
+            <div className="searchsec">
+                <div className="location-main">
+                    <div className="location-search-bar">
+                        {allowlocation.length > 0 ?
+                            <div className="for-allow">{allowlocation}</div>
+                            : ''}
+                        <div className="location-heading-filter">
+                            <h1 className="">{StaticData.FindLocationtext1}</h1>
+                        </div>
+                        <div className="search-locationpage ">
+                            <div className="usemylocation-detail">
+                                <button className="useMyLocation flex space-x-4" title="Search using your current location!" id="useLocation" onClick={onClick}>
+                                    <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
 
-                                },
-                                {
-                                    entityType: "location",
-                                    fieldApiName: "address.postalCode",
+                                    <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
+                                </button>
+                            </div>
+                            <div className="or">OR</div>
+                            <div className="location-search-bx">
+                                <div className="location-search-field">
+                                    <FilterSearch
+                                        ref={filterRef}
+                                        displaymsg={displaymsg}
+                                        setDisplaymsg={setDisplaymsg}
+                                        customCssClasses={{
+                                            filterSearchContainer: "m-2 inputsearch",
+                                            inputElement: "FilterSearchInput pr-[90px]",
+                                            optionsContainer: "options"
+                                        }}
+                                        inputvalue={inputvalue}
+                                        setSearchInputValue={setInputValue}
+                                        params={params1}
+                                        searchOnSelect={true}
+                                        searchFields={[
+                                            {
+                                                entityType: "location",
+                                                fieldApiName: "address.line1",
 
-                                },
-                                {
-                                    entityType: "location",
-                                    fieldApiName: "name",
+                                            },
+                                            {
+                                                entityType: "location",
+                                                fieldApiName: "address.postalCode",
 
-                                },
-                                {
-                                    entityType: "location",
-                                    fieldApiName: "address.city",
+                                            },
+                                            {
+                                                entityType: "location",
+                                                fieldApiName: "name",
 
-                                },
-                                {
-                                    entityType: "location",
-                                    fieldApiName: "address.region",
+                                            },
+                                            {
+                                                entityType: "location",
+                                                fieldApiName: "address.city",
 
-                                },
-                                // {
-                                //   entityType: "location",
-                                //   fieldApiName: "address.countryCode",
+                                            },
+                                            {
+                                                entityType: "location",
+                                                fieldApiName: "address.region",
 
-                                // },
-                            ]}
+                                            },
+                                            // {
+                                            //   entityType: "location",
+                                            //   fieldApiName: "address.countryCode",
 
-                            handleInputValue={handleInputValue}
-                            handleSetUserShareLocation={handleSetUserShareLocation}
-                        />
-                        <button
-                            className="search-btn"
-                            aria-label="Search bar icon"
-                            id="search-location-button" onClick={Findinput}>
-                            <span dangerouslySetInnerHTML={{ __html: search_icn }} />
-                        </button>
-                    </div>
-                    <div className="fliter-sec">
-                        <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
-                            <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
+                                            // },
+                                        ]}
 
-                            <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
-                        </button>
+                                        handleInputValue={handleInputValue}
+                                        handleSetUserShareLocation={handleSetUserShareLocation}
+                                    />
+
+                                    <button
+                                        className="search-btn"
+                                        aria-label="Search bar icon"
+                                        id="search-location-button" onClick={Findinput}>SEARCH
+                                         {/* <span dangerouslySetInnerHTML={{ __html: search_icn }} /> */}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -303,6 +306,9 @@ const Locationsearch = (props: any): JSX.Element => {
     );
 };
 
-export default Locationsearch;
+export default LocationLayout;
+
+
+
 
 

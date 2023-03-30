@@ -18,6 +18,9 @@ import { favicon, stagingBaseurl } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
 import Header from "../components/layouts/header";
 import Footer from "../components/layouts/footer";
+import LocationLayout from "../components/layouts/Locationsearch";
+import { SearchHeadlessProvider } from "@yext/search-headless-react";
+import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 
 
 /**
@@ -274,6 +277,19 @@ const region: Template<TemplateRenderProps> = ({
   return (
     <>
         <PageLayout _site={_site}>
+        <SearchHeadlessProvider
+          experienceKey={AnswerExperienceConfig.experienceKey}
+          locale={AnswerExperienceConfig.locale}
+          apiKey={AnswerExperienceConfig.apiKey}
+          verticalKey={AnswerExperienceConfig.verticalKey}
+          experienceVersion="STAGING"
+          sessionTrackingEnabled={true}
+          endpoints={AnswerExperienceConfig.endpoints}    
+        >
+          
+          <LocationLayout _site={_site}/>
+     
+        </SearchHeadlessProvider>
         <BreadCrumbs
             name={name}
             parents={dm_directoryParents}
