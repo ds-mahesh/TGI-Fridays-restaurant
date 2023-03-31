@@ -13,8 +13,8 @@ const Header = (props: any) => {
     </a>
   ));
 
-  const Titlemenu = props?._site?.c_titleMenu?.map((link: any) => (
-    <a href="">
+  const Titlemenu = props?._site?.c_titleMenu?.map((link: any,i:any) => (
+    <a key={i} href="">
       <img src={link.titleLogo?.url} alt={''} />
       <span>{link.titleLabel.label}</span>
     </a>

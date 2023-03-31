@@ -40,7 +40,7 @@ interface FilterSearchCssClasses
 }
 
 const builtInCssClasses: FilterSearchCssClasses = {
-  container: "mb-2 w-full",
+  container: "mb-2",
   label: "mb-4 text-sm font-medium text-gray-900",
   dropdownContainer:
     "absolute z-10 shadow-lg w-full rounded-md border border-gray-300 bg-white pt-3 pb-1 px-4 mt-1",

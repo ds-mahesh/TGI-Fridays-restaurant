@@ -178,7 +178,7 @@ const LocationLayout = (props: any): JSX.Element => {
 
     }
 
-    let bannerimage = props._site.c_locatorBannerImage != undefined ? props._site.c_locatorBannerImage.image.url : '';
+    // let bannerimage = props._site.c_locatorBannerImage != undefined ? props._site.c_locatorBannerImage.image.url : '';
 
 
     // const loader =
@@ -231,10 +231,11 @@ const LocationLayout = (props: any): JSX.Element => {
                         </div>
                         <div className="search-locationpage ">
                             <div className="usemylocation-detail">
-                                <button className="useMyLocation flex space-x-4" title="Search using your current location!" id="useLocation" onClick={onClick}>
-                                    <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
+                                <button className="useMyLocation flex space-x-2" title="Search using your current location!" id="useLocation" onClick={onClick}>
+                                    {/* <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} /> */}
+                                    <img className="use-locationimg" src="https://locations.tgifridays.com/img/dir-arrow.png" alt={''} />
 
-                                    <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
+                                    <span className=" hover:no-underline"> {StaticData.Usemylocation}</span>
                                 </button>
                             </div>
                             <div className="or">OR</div>
@@ -246,7 +247,7 @@ const LocationLayout = (props: any): JSX.Element => {
                                         setDisplaymsg={setDisplaymsg}
                                         customCssClasses={{
                                             filterSearchContainer: "m-2 inputsearch",
-                                            inputElement: "FilterSearchInput pr-[90px]",
+                                            inputElement: "FilterSearchInput",
                                             optionsContainer: "options"
                                         }}
                                         inputvalue={inputvalue}

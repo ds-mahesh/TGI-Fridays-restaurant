@@ -647,11 +647,12 @@ const City: Template<TemplateRenderProps> = ({
         CtaButton={""}
         text={name ? name : ""}
         template={"city"}
-      /> */}
-            <div style={{ backgroundColor: "lightgreen" }}>
-              <h1 className="sec_heading mt-12" style={{ textAlign: "center" }}>
-                Available Stores in {name}, {document.dm_directoryParents[2].name},{" "}
-                {document.dm_directoryParents[1].name}{" "}
+      /> */}<div className="citypage">
+            <div className="city-head">
+              <h1 className="sec_heading mt-12">
+              TGI Fridays in {name}
+              {/* , {document.dm_directoryParents[2].name},{" "}
+                {document.dm_directoryParents[1].name}{" "} */}
               </h1>
               <div className="directory-country nearby-sec" style={{ backgroundColor: "lightcyan" }}>
                 <div className="container" >
@@ -660,6 +661,7 @@ const City: Template<TemplateRenderProps> = ({
                   </div>
                 </div>
               </div>
+            </div>
             </div>
             
           </PageLayout  >

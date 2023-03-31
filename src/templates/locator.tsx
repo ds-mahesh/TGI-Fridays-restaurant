@@ -14,6 +14,7 @@ import { Address } from "../types/search/locations";
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect } from "react";
 import SearchLayout from "../components/locatorPage/SearchLayout";
+import LocationLayout from "../components/layouts/Locationsearch";
 import {stagingBaseurl, favicon, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie} from "../../sites-global/global"
 import Newsletter from "../components/locatorPage/Newsletter";
 import { JsonLd } from "react-schemaorg";
@@ -203,6 +204,7 @@ const Locator: Template<TemplateRenderProps>= ({
         {/* <div>Name:{name}</div>
         <div>Address:{address.line1}{address.line2} {address.city}</div>
         <div>{address.region}</div> */}
+       
         <SearchHeadlessProvider
           experienceKey={AnswerExperienceConfig.experienceKey}
           locale={AnswerExperienceConfig.locale}
@@ -212,6 +214,7 @@ const Locator: Template<TemplateRenderProps>= ({
           sessionTrackingEnabled={true}
           endpoints={AnswerExperienceConfig.endpoints}    
         >
+           <LocationLayout />
           
           <SearchLayout _site={_site}/>
      

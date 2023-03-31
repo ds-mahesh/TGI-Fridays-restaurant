@@ -131,11 +131,11 @@ const country: Template<TemplateRenderProps> = ({
     dm_directoryChildren
   } = document;
 
-  const Bannerimage=c_bannerphoto.map((link:any)=>(
-    <img src={link.url} alt={''}/>
+  const Bannerimage=c_bannerphoto.map((link:any,i:any)=>(
+    <img key={i} src={link.url} alt={''}/>
   ))
 
-  const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
+  const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any,index:number) => {
     let detlslug;
 
 
@@ -183,7 +183,7 @@ const country: Template<TemplateRenderProps> = ({
     }
 
     return (
-      <li className=" storelocation-category">
+      <li key={index} className=" storelocation-category">
         <a
           key={entity.slug}
           href={slug +"/"+ entity.slug + ".html"}
@@ -195,14 +195,14 @@ const country: Template<TemplateRenderProps> = ({
   }) : null;
 
 
-  let bannerimage = c_locatorBannerImage ? c_locatorBannerImage.map((element: any) => {
-    return element.url
-  }) : null;
+  // let bannerimage = c_locatorBannerImage ? c_locatorBannerImage.map((element: any) => {
+  //   return element.url
+  // }) : null;
 
   return (
     <>
       <PageLayout _site={_site}>
-        {/* <div className="country-banner">
+        <div className="country-banner">
           <div className="imgcount">
                {Bannerimage}
           </div>
@@ -222,23 +222,24 @@ const country: Template<TemplateRenderProps> = ({
           
               </SearchHeadlessProvider>
               </div>
-          </div> */}
+          </div>
         
 
-        <BreadCrumbs
+        {/* <BreadCrumbs
           name={regionNames.of(name)}
           address={address}
           parents={dm_directoryParents}
           baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs>
+        ></BreadCrumbs> */}
         {/* <div className="location-dtl">
           <Banner name={regionNames.of(name)} c_bannerImage={bannerimage} />
         </div> */}
-        <div className="content-list" style={{backgroundColor:"lightgreen"}}>
+        <div className="content-list" style={{backgroundColor:"#000"}}>
           <div className="container">
             <div className="sec-title">
               <h2 style={{ textAlign: "center" }}>
-                {StaticData.AllRegion} {regionNames.of(name)}{" "}
+                {/* {StaticData.AllRegion} {regionNames.of(name)}{" "} */}
+                All locations in the United States, we make it easy to find your Fridays™ 
               </h2>
             </div>
 

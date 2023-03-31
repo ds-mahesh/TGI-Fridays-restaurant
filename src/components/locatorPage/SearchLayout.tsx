@@ -246,7 +246,7 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
           </div>
 
           <div className="search-field">
-            <FilterSearch
+            {/* <FilterSearch
              ref={filterRef}
              displaymsg={displaymsg}
              setDisplaymsg={setDisplaymsg}
@@ -294,14 +294,14 @@ const loading = useSearchState(s=>s.searchStatus.isLoading);
                 
                 handleInputValue={handleInputValue}  
                 handleSetUserShareLocation={handleSetUserShareLocation}
-            />
+            /> */}
 
-            <button
+            {/* <button
               className="search-btn"
               aria-label="Search bar icon"
               id="search-location-button" onClick={Findinput}>
                 <span dangerouslySetInnerHTML={{ __html: search_icn }} />
-                </button>
+                </button> */}
           </div>
 
 <div className="fliter-sec">
