@@ -847,6 +847,9 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .button-bx .buttons {display: flex;
   justify-content: center;}
 
+  /* nearby    */
+  .nearby-card .button-bx {display: flex;}
+
 
 
   /* infowindow */
