@@ -15,7 +15,7 @@ import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect } from "react";
 import SearchLayout from "../components/locatorPage/SearchLayout";
 import LocationLayout from "../components/layouts/Locationsearch";
-import {stagingBaseurl, favicon, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie} from "../../sites-global/global"
+import { stagingBaseurl, favicon, AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../../sites-global/global"
 import Newsletter from "../components/locatorPage/Newsletter";
 import { JsonLd } from "react-schemaorg";
 import { StaticData } from "../../sites-global/staticData";
@@ -36,7 +36,7 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "address"
-     
+
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -58,133 +58,132 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   path,
   document,
 }): HeadConfig => {
- return {
-   title:`${document.c_meta_title?document.c_meta_title:`TGI Fridays Near Me - Find TGI FridaysBranch Locator Here.`}`,
-   charset: "UTF-8",
-   viewport: "width=device-width, initial-scale=1",
-   tags: [
-     {
-       type: "meta",
-       attributes: {
-         name: "description",
-         content: `${document.c_meta_description?document.c_meta_description:`View TGI Fridays near you today at TGI Fridays. We stock high-quality, robust products at competitive rates.`}`,
-       },
-     },
+  return {
+    title: `${document.c_meta_title ? document.c_meta_title : `TGI Fridays Near Me - Find TGI FridaysBranch Locator Here.`}`,
+    charset: "UTF-8",
+    viewport: "width=device-width, initial-scale=1",
+    tags: [
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: `${document.c_meta_description ? document.c_meta_description : `View TGI Fridays near you today at TGI Fridays. We stock high-quality, robust products at competitive rates.`}`,
+        },
+      },
 
-     {
-       type: "meta",
-       attributes: {
-         name: "author",
-         content: StaticData.Brandname,
-       },
-     },
+      {
+        type: "meta",
+        attributes: {
+          name: "author",
+          content: StaticData.Brandname,
+        },
+      },
 
-     {
-       type: "meta",
-       attributes: {
-         name: "robots",
-         content: "noindex, nofollow",
-       },
-     },
-     {
-      type: "link",
-      attributes: {
-        rel: "shortcut icon",
-        href: favicon,
+      {
+        type: "meta",
+        attributes: {
+          name: "robots",
+          content: "noindex, nofollow",
+        },
       },
-    },
+      {
+        type: "link",
+        attributes: {
+          rel: "shortcut icon",
+          href: favicon,
+        },
+      },
 
-     {
-       type: "link",
-       attributes: {
-         rel: "canonical",
-         href: `${
-           document._site.c_canonical?document.c_canonical:stagingBaseurl
-            
-         }`,
-       },
-     },
- 
-     {
-       type: "meta",
-       attributes: {
-         property: "og:description",
-         content: `${document.c_meta_description?document.c_meta_description:`View TGI Fridays near you today at TGI Fridays. We stock high-quality, robust products at competitive rates.`}`,
-       },
-     },
-     {
-       type: "meta",
-       attributes: {
-         property: "og:title",
-         content: `${document.c_meta_title?document.c_meta_title:`TGI Fridays Near Me - Find TGI Fridays Branch Locator Here.`}`,
-       },
-     },
-     {
-       type: "meta",
-       attributes: {
-         property: "og:image",
-         content: favicon,
-       },
-     },
-     {
-      type: "meta",
-      attributes: {
-        name: "twitter:card",
-        content: "summary",
+      {
+        type: "link",
+        attributes: {
+          rel: "canonical",
+          href: `${document._site.c_canonical ? document.c_canonical : stagingBaseurl
+
+            }`,
+        },
       },
-    },
-    {
-      type: "meta",
-      attributes: {
-        name: "twitter:description",
-        content:`${document.c_meta_description?document.c_meta_description:`View TGI Fridays near you today at TGI Fridays. We stock high-quality, robust products at competitive rates.`}`,
+
+      {
+        type: "meta",
+        attributes: {
+          property: "og:description",
+          content: `${document.c_meta_description ? document.c_meta_description : `View TGI Fridays near you today at TGI Fridays. We stock high-quality, robust products at competitive rates.`}`,
+        },
       },
-    },
-    {
-      type: "meta",
-      attributes: {
-        name: "twitter:title",
-        content: `${document.c_meta_title?document.c_meta_title:`TGI Fridays Near Me - Find TGI Fridays Branch Locator Here.`}`,
+      {
+        type: "meta",
+        attributes: {
+          property: "og:title",
+          content: `${document.c_meta_title ? document.c_meta_title : `TGI Fridays Near Me - Find TGI Fridays Branch Locator Here.`}`,
+        },
       },
-    },
-    {
-      type: "meta",
-      attributes: {
-        name: "twitter:image",
-        content: favicon
+      {
+        type: "meta",
+        attributes: {
+          property: "og:image",
+          content: favicon,
+        },
       },
-    },
-   
-   ],
-   
- };
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:card",
+          content: "summary",
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:description",
+          content: `${document.c_meta_description ? document.c_meta_description : `View TGI Fridays near you today at TGI Fridays. We stock high-quality, robust products at competitive rates.`}`,
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:title",
+          content: `${document.c_meta_title ? document.c_meta_title : `TGI Fridays Near Me - Find TGI Fridays Branch Locator Here.`}`,
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:image",
+          content: favicon
+        },
+      },
+
+    ],
+
+  };
 };
 
-const Locator: Template<TemplateRenderProps>= ({
-   document,
-   __meta,
- }) => {
-   const {    
-   _site,
-   name,
-   address
-   } = document;
- 
+const Locator: Template<TemplateRenderProps> = ({
+  document,
+  __meta,
+}) => {
+  const {
+    _site,
+    name,
+    address
+  } = document;
+
 
   let templateData = { document: document, __meta: __meta };
-  const endpoints =  {
+  const endpoints = {
     universalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query",
     verticalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/query",
     questionSubmission: "https://liveapi-sandbox.yext.com/v2/accounts/me/createQuestion",
     universalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/autocomplete",
     verticalAutocomplete: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/autocomplete",
     filterSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch",
-   
+
   }
-  var Api="AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";  
+  var Api = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
   return (
     <>
-    <JsonLd<locator>
+      <JsonLd<locator>
         item={{
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -193,36 +192,31 @@ const Locator: Template<TemplateRenderProps>= ({
           logo: favicon,
         }}
       />
-          <AnalyticsProvider
+      <AnalyticsProvider
         templateData={templateData}
-        enableDebugging={AnalyticsEnableDebugging} 
+        enableDebugging={AnalyticsEnableDebugging}
         enableTrackingCookie={AnalyticsEnableTrackingCookie}
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
-      <PageLayout _site={_site}>
-        {/* <div>Name:{name}</div>
+          <PageLayout _site={_site}>
+            {/* <div>Name:{name}</div>
         <div>Address:{address.line1}{address.line2} {address.city}</div>
         <div>{address.region}</div> */}
-       
-        <SearchHeadlessProvider
-          experienceKey={AnswerExperienceConfig.experienceKey}
-          locale={AnswerExperienceConfig.locale}
-          apiKey={AnswerExperienceConfig.apiKey}
-          verticalKey={AnswerExperienceConfig.verticalKey}
-          experienceVersion="STAGING"
-          sessionTrackingEnabled={true}
-          endpoints={AnswerExperienceConfig.endpoints}    
-        >
-           <LocationLayout />
-          
-          <SearchLayout _site={_site}/>
-     
-        </SearchHeadlessProvider>
-      
-
-      </PageLayout>
-      </AnalyticsScopeProvider>
+            <SearchHeadlessProvider
+              experienceKey={AnswerExperienceConfig.experienceKey}
+              locale={AnswerExperienceConfig.locale}
+              apiKey={AnswerExperienceConfig.apiKey}
+              verticalKey={AnswerExperienceConfig.verticalKey}
+              experienceVersion="STAGING"
+              sessionTrackingEnabled={true}
+              endpoints={AnswerExperienceConfig.endpoints}
+            >
+              <LocationLayout />
+              <SearchLayout _site={_site} />
+            </SearchHeadlessProvider>
+          </PageLayout>
+        </AnalyticsScopeProvider>
       </AnalyticsProvider>
     </>
   );

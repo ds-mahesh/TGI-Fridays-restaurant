@@ -299,11 +299,11 @@ const DayRow = (props: DayRow) => {
         <td className="dayName" key={key}>
           <span className="checked"></span> {dayName}*
           {c_specific_day &&
-            c_specific_day.map((res: any) => {
+            c_specific_day.map((res: any,index:number) => {
               return (
                 <>
                   {join(new Date(res.holidayDate), a, " ") == dayDate ? (
-                    <span>{res.holidayName}</span>
+                    <span key={index}>{res.holidayName}</span>
                   ) : (
                     ""
                   )}
@@ -377,8 +377,8 @@ const DayRow = (props: DayRow) => {
         (Status ? (
           <td className="dayTime">
             {holidayopenintervals &&
-              holidayopenintervals.map((res: any) => {
-                return res.map((openint: any) => {
+              holidayopenintervals.map((res: any,index:number) => {
+                return res.map((openint: any,index:number) => {
                   return openint.openIntervals.map((res: any,index:number) => {
                     return (
                       <>

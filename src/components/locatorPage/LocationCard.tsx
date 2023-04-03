@@ -37,6 +37,15 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     }
   }
 
+  function show_hide() {
+    var click:any = document.getElementById("list-hours");
+    if (click.style.display === "none") {
+      click.style.display = "block";
+    } else {
+      click.style.display = "none";
+    }
+  }
+
   const { address ,hours} = result.rawData;
   //     var name: any = result.rawData.name?.toLowerCase();
   //   var region: any = result.rawData.address.region?.toLowerCase();
@@ -87,8 +96,8 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                     </div>
                   </>
                     : <>
-                      <div className="dropdown">
-                        <button  className=" flex open-now-string items-center" data-id={`main-shop-${result.rawData.id}`} >
+                      <div className="dropdown" style={{position:"relative",display:"inline-block"}}>
+                        <button onClick={show_hide}  className=" flex open-now-string items-center" data-id={`main-shop-${result.rawData.id}`} >
                           <OpenClose
                             timezone={result.rawData.timezone}
                             hours={result.rawData.hours}
@@ -97,7 +106,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                           <img className="h-9 w-9" src="https://cdn-icons-png.flaticon.com/128/9347/9347220.png" alt="" style={{ marginLeft: "5px", marginTop: "5px" }} />
                         </button>
 
-                        <div id="list-hours" className="dropdown-content">
+                        <div id="list-hours" className="dropdown-content" style={{display:"none"}}>
                           <Hours hours={hours} />
                         </div>
                       </div>

@@ -834,16 +834,41 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .location-phn {font-size: 18px; color: #000;}
 .address-extrades {color: #000;}
 
+/* location card */
+.address span {font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #000;}
+.result-inner .center-column .button-bx .btn{
+  background-color: #D31A21;
+  color: #fff;
+}
+
+.left-listing .button-bx #view-more-button {width: 160px;}
+.button-bx .buttons {display: flex;
+  justify-content: center;}
+
+
+
+  /* infowindow */
+  .result-inner .location-name-miles h2 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    line-height: 1.25;
+    margin-left: 2rem;
+  }
+
+  /* ---------------- */
+  .fliter-sec .useMyLocation .underline{color: #000; font-size: 17px;}
+
+.hours-info span {font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #000;} 
+
 .location .button-bx {
   padding-left: 1.75rem;
   display: flex;
 }
-.location-name-miles h2 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  line-height: 1.25;
-  margin-left: 2rem;
-}
+
 .address-with-availablity {
   display: flex;
   flex-direction: column;
@@ -977,7 +1002,7 @@ margin: 0 auto;
   color: #fff;
   text-decoration: none;
 }
-
+.country-search-bar .usemylocation-detail button span{padding: 10px 0;}
 /* city-page */
 .city-head  h1 {
     font-size: 2.25rem;

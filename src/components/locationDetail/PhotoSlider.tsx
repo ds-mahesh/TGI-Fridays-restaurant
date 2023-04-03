@@ -18,9 +18,9 @@ const PhotoSlider = (props: any, index: any) => {
 
 
   // const Happensatcultura =props?.c_newsStore?.map((link: any) => (
-  const Dishesmenu = props?.c_dishesMenu?.map((link: any) => (
+  const Dishesmenu = props?.c_dishesMenu?.map((link: any,i:any) => (
     <SplideSlide>
-      <div className="menues">
+      <div key={i} className="menues">
         <div>
       <img  src={link.menuimage?.url} alt={''} />
       </div>
