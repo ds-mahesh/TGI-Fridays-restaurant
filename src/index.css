@@ -247,10 +247,10 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 }
 .icon-row {
   position: relative;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .icon-row{
@@ -303,7 +303,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .pagination-conatiner{ @apply mt-4}
 .nearby-btn .btn{ @apply !w-full}
 .nearby-card .button-bx{@apply ml-0 lg:ml-0 flex-row justify-start }
-.nearby-card .button-bx .btn{@apply w-[9.75rem] bg-Dark-red hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
+.nearby-card .button-bx .btn{@apply  hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
 .nearby-card .button-bx .btn.notHighligh{@apply w-full md:w-[48%] ml-2 bg-white justify-start  border-none text-black underline  }
 .nearby-card .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto hover:no-underline}
 .nearby-card .button-bx .btn:hover svg{@apply !fill-red }
@@ -465,6 +465,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .nearby-sec{@apply bg-transparent md:bg-light-grey w-full pt-7 pb-0 md:py-[3.75rem] }
 .nearby-sec-inner{@apply sm:mx-auto sm:max-w-[33.5rem] lg:mx-auto lg:max-w-none flex flex-col lg:flex-row gap-4 justify-center pb-0 xl:pb-0 }
 .nearby-sec .splide__slide{@apply xl:px-4}
+.nearby-sec-inner {padding: 0px 110px;}
 .nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-3 md:p-5 border border-box-border
 }
 .nearby-card .red-dot{ @apply !justify-start}
@@ -819,7 +820,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .tgilogo {margin-left: 8.33333333%; width: 41.66666667%;}
 
 /* all Amenities */
-.amenities {padding: 50px 120px;}
+.amenities {padding: 50px 140px;}
 .amenities .mainheading{font-family: "gothic-bold", Arial, sans-serif; font-size: 26px; text-align: center; font-weight: bolder; text-transform: uppercase;}
 .nameheading {display: flex; padding-top: 25px ;}
 .amnamelist .amenitiesname {font-family: "gothic-bold", Arial, sans-serif; text-transform: uppercase; margin-top: 0.75em; font-weight: bold; font-size: 16px; color: black;}
