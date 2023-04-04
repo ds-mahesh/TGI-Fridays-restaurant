@@ -52,7 +52,7 @@ const Footer = (props: any) => {
 	return (
 		<>
 
-			<footer className="site-footer inline-block">
+			<footer className="site-footer container">
 				<div className="socialicons">
 					<ul className="sociallist">
 						<li>{Socialicons} </li>
