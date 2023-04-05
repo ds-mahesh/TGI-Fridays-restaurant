@@ -352,7 +352,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 /* address sec */
 /* .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11} */
 .location-information{  @apply flex flex-wrap w-full  }
-.location-information {padding: 40px 140px; padding-bottom: 100px;}
+.location-information {padding: 40px 140px; padding-bottom: 60px;}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg}
 .address-text {font-size: 18px; padding-top: 20px; font-family: "gothic", Arial, sans-serif;}
@@ -708,6 +708,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   font-weight: 500; text-transform: uppercase; }
 .bottomfooterlink {padding-top: 20px;}
 
+
+
 /* mapsec--------------- */
 .hoursamenities h5 {font-size: 1.375rem; text-transform: uppercase; font-weight: bold; color: #000;}
 .sortlist ul li {font-family: "gothic", Arial, sans-serif; font-size: 18px; padding: 8px 0; color: #000;}
@@ -757,8 +759,27 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 /* food image */
 .getimagecard {display: flex; padding: 60px 140px;}
 .getimagecard .mainfoodtext {width: 50%;}
+.foodcarddirection {margin-top: 50px;}
+.getdirectionimagecard:hover {
+  background-color: #D31A21;
+  color: #f3f3f3;
+}
+.getdirectionimagecard {
+  height: 50px;
+  color: red;
+  width: 185px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  font-size: 18px;
+  font-family: "gothic", Arial, sans-serif;
+  border: 1px solid #D31A21;
+  font-weight: 600;
+  text-transform: uppercase;
+}
 .getimagecard .mainfoodtext .foodtext .foodtextheading {font-weight: bold; font-size: 26px;font-family: "gothic-bold", Arial, sans-serif;}
-.mainfoodtext {border: 25px solid red; border-top-style: dotted; border-bottom-style: dotted; border-right-style: dotted; border-left-style: none;}
+.mainfoodtext {border: 25px solid red; border-top-style: inherit; border-bottom-style: inherit; border-right-style: inherit; border-left-style: none;}
 .fooddescription {font-size: 20px;  margin-top: 20px;}
 .foodtext {padding: 30px;}
 
@@ -826,7 +847,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .amnamelist .amenitiesname {font-family: "gothic-bold", Arial, sans-serif; text-transform: uppercase; margin-top: 0.75em; font-weight: bold; font-size: 16px; color: black;}
 .amenatieslist {font-family: "gothic", Arial, sans-serif; font-size: 17px; font-weight: 500;  margin-top: 0.75em; color: black;}
 .Amenitiesnamelist{padding-top: 20px;}
-.mainhoursamenities {display: flex; margin-top: 100px;}
+.mainhoursamenities {display: flex; margin-top: 60px;}
 .mapsecwaitlist {width: 12rem;}
 .banner-text {padding: 0 140px;}
 .address-text .addhead{font-weight: bold;}
@@ -834,6 +855,14 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .location-phn span{font-weight: bold; color: #000;}
 .location-phn {font-size: 18px; color: #000;}
 .address-extrades {color: #000;}
+
+/* online hours */
+.onlinehours {
+  font-size: 18px;
+  background-color: #f3f3f3;
+  margin-top: 50px;
+  font-family: "gothic", Arial, sans-serif;
+}
 
 /* location card */
 .address span {font-family: "futura_ptdemi", Georgia, Arial, sans-serif;

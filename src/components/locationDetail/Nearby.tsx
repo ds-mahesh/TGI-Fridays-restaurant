@@ -44,23 +44,23 @@ export default function Nearby(props: any) {
           },
         }}
       > */}
-        {neabyData.map((location: any, index: Number) => {
+        {neabyData.map((location: any, index: number) => {
 
-          // let url = "";
-          // var name: any = location.data.name?.toLowerCase();
-          // var region: any = location.data.address.region?.toLowerCase();
-          // var initialregion: any = region.toString();
-          // var finalregion: any = initialregion.replaceAll(" ", "-");
-          // var city: any = location.data.address.city?.toLowerCase();
-          // var initialrcity: any = city.toString();
-          // var finalcity: any = initialrcity.replaceAll(" ", "-");
-          // var string: any = name.toString();
-          // let result1: any = string.replaceAll(" ", "-");
-          // if (!location.data.slug) {
-          //   url = `/${location.data.id}-${result1}.html`;
-          // } else {
-          //   url = `/${location.data.slug.toString()}.html`;
-          // }
+          let url = "";
+          var name: any = location.data.name?.toLowerCase();
+          var region: any = location.data.address.region?.toLowerCase();
+          var initialregion: any = region.toString();
+          var finalregion: any = initialregion.replaceAll(" ", "-");
+          var city: any = location.data.address.city?.toLowerCase();
+          var initialrcity: any = city.toString();
+          var finalcity: any = initialrcity.replaceAll(" ", "-");
+          var string: any = name.toString();
+          let result1: any = string.replaceAll(" ", "-");
+          if (!location.data.slug) {
+            url = `/${location.data.id}-${result1}.html`;
+          } else {
+            url = `/${location.data.slug.toString()}.html`;
+          }
       
           if (index > 0) {
             return (

@@ -87,6 +87,7 @@ export const config: TemplateConfig = {
       "c_viewAllAmenities",
       "c_tGIReviews",
       "deliveryHours",
+      "pickupHours"
   
       // "c_onlineorderHours"
 
@@ -302,7 +303,8 @@ const Location: Template<ExternalApiRenderData> = ({
     c_tGIAmenities,
     c_dineMenues,
     c_tGIReviews,
-    c_hoursAmenities
+    c_hoursAmenities,
+    pickupHours
 
   } = document;
 
@@ -318,6 +320,7 @@ const Location: Template<ExternalApiRenderData> = ({
     <img key={index} className="retingstar " src={e.url} alt={''} />
   ))
 
+  
 
   const Whosereview = c_tGIReviews.whoseReviewHeading.map((e: any, index: number) => (
     <div className="reviews" key={index}>
@@ -523,6 +526,7 @@ const Location: Template<ExternalApiRenderData> = ({
               parents={dm_directoryParents}
               baseUrl={relativePrefixToRoot}
             ></BreadCrumbs>
+            {/* {Onlineorder} */}
 
             <div className="nameheading ">
               <div className='banner-text'>
@@ -535,8 +539,8 @@ const Location: Template<ExternalApiRenderData> = ({
             <div className="location-all-detail">
               <div className="location-information">
 
-                <Contact address={address}
-                  phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
+                <Contact address={address} 
+                  phone={mainPhone} pickupHours={pickupHours} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
                   yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} c_dishesMenu={c_dishesMenu} hours={hours} c_hoursAmenities={c_hoursAmenities} ></Contact>
                 {/* {
                   hours ?
@@ -558,6 +562,10 @@ const Location: Template<ExternalApiRenderData> = ({
                   <div className="foodtext">
                     <div className="foodtextheading">DEAL IN {address.line2} ,{address.region}</div>
                     <div className="fooddescription" style={{ fontSize: "20px" }} >{c_getdirectioncardimage.description} </div>
+                    <div className="foodcarddirection"> 
+                    <div className="getdirectionimagecard">
+                    <GetDirection buttonText={"Get directions"} address={address} latitude={displayCoordinate ? displayCoordinate.latitude : yextDisplayCoordinate.latitude} longitude={displayCoordinate ? displayCoordinate.longitude : yextDisplayCoordinate.longitude} /></div>
+                  </div>
                   </div>
                 </div>
               </div>

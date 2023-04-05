@@ -24,8 +24,14 @@ const Contact = (props: any) => {
     c_storeInfoHeading,
     c_getDirectionsCTAText,
     c_hoursAmenities,
-    c_dishesMenu
+    c_dishesMenu,
+    pickupHours
   } = props;
+
+  const Onlineorder = props?.pickupHours?.monday?.openIntervals?.map((e: any, index: number) => (
+    <span>{e.start}AM - {e.end} AM</span>
+  ))
+
 
   // const Hoursamenities = props.c_hoursAmenities.tGIlist.map((e: any, index: number) => (
   //   <div className="sortofamenities">
@@ -54,6 +60,9 @@ const Contact = (props: any) => {
           </ul>
           <button className="mapsecwaitlist">JOIN THE WAITLIST</button>
         </div>
+        <div className="orderonline">
+          <div className="onlinehours">Online ordering and reservations available from {Onlineorder}</div>
+          </div>
 
         <div className="mainhoursamenities">
           {hours && typeof hours.monday != "undefined" ? (
