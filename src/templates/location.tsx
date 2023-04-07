@@ -88,7 +88,7 @@ export const config: TemplateConfig = {
       "c_tGIReviews",
       "deliveryHours",
       "pickupHours"
-  
+
       // "c_onlineorderHours"
 
     ],
@@ -112,23 +112,23 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-//   var url = "";
-//   var name: any = document.name.toLowerCase();
-//   var string: any = name.toString();;
-//   let result: any = string.replaceAll(" ", "-");
-//   document.dm_directoryParents.map((result: any, i: Number) => {
-//     if (i > 0) {
-//       url = result.slug + "/"
-//     }
-//   })
-//   if (!document.slug) {
-//     url = `${result}.html`;
-//   } else {
-//     url = `${document.slug.toString()}.html`;
-//   }
-// console.log(url,"maheshchand")
- // return url;
- return document.id;
+  //   var url = "";
+  //   var name: any = document.name.toLowerCase();
+  //   var string: any = name.toString();;
+  //   let result: any = string.replaceAll(" ", "-");
+  //   document.dm_directoryParents.map((result: any, i: Number) => {
+  //     if (i > 0) {
+  //       url = result.slug + "/"
+  //     }
+  //   })
+  //   if (!document.slug) {
+  //     url = `${result}.html`;
+  //   } else {
+  //     url = `${document.slug.toString()}.html`;
+  //   }
+  // console.log(url,"maheshchand")
+  // return url;
+  return document.id;
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -163,8 +163,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${document.c_meta_description ? document.c_meta_description : `Find the ${document.name} TGI Restaurant in ${document.address.city}. We stock high-quality, robust products at competitive rates.`}`,
         },
       },
-
-
       {
         type: "meta",
         attributes: {
@@ -172,7 +170,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: StaticData.Brandname,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -180,7 +177,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: "noindex, nofollow",
         },
       },
-
       {
         type: "link",
         attributes: {
@@ -190,7 +186,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
             }${document.slug ? document.slug : `${document.name.toLowerCase()}`}.html`,
         },
       },
-
       {
         type: "meta",
         attributes: {
@@ -241,14 +236,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         },
       },
       /// twitter tag
-
-
-
-
-
-
     ],
-
   };
 };
 type ExternalApiData = TemplateProps & { externalApiData: nearByLocation };
@@ -266,8 +254,6 @@ export const transformProps: TransformProps<ExternalApiData> = async (
   )) as nearByLocation;
   return { ...data, externalApiData };
 };
-
-
 
 type ExternalApiRenderData = TemplateRenderProps & {
   externalApiData: nearByLocation;
@@ -320,26 +306,22 @@ const Location: Template<ExternalApiRenderData> = ({
     <img key={index} className="retingstar " src={e.url} alt={''} />
   ))
 
-  
+
 
   const Whosereview = c_tGIReviews.whoseReviewHeading.map((e: any, index: number) => (
     <div className="reviews" key={index}>
-      <div className="headingreview">
-        {e.whoseReview.label}
-      </div>
+      <div className="headingreview">{e.whoseReview.label}</div>
       <div className="retingimgcount">
-        {e.reviewReting.map((link: any, i: any) => (
-          <img key={i} className="retingimage" src={link.url} alt={""} />
+        {e.reviewReting.map((link: any, index: any) => (
+          <img key={index} className="retingimage" src={link.url} alt={""} />
         ))}
         <p>{e.reviewCount}</p>
       </div>
       <div className="reviewlink">
-        <a href={e.reviewLink.link}> {e.reviewLink.label}</a>
+        <a href={e.reviewLink.link}>{e.reviewLink.label}</a>
       </div>
     </div>
   ))
-
-
 
   let templateData = { document: document, __meta: __meta };
   let hoursSchema = [];
@@ -462,11 +444,8 @@ const Location: Template<ExternalApiRenderData> = ({
   console.log(document)
   let bannerimage = c_banner_image && c_banner_image.image.url;
 
-
   return (
-
     <>
-
       <JsonLd<Store>
         item={{
           "@context": "https://schema.org",
@@ -491,13 +470,9 @@ const Location: Template<ExternalApiRenderData> = ({
         item={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-
           itemListElement: breadcrumbScheme,
         }}
       />
-
-
-
       <AnalyticsProvider
         templateData={templateData}
         enableDebugging={AnalyticsEnableDebugging}
@@ -506,31 +481,27 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-          <SearchHeadlessProvider
-          experienceKey={AnswerExperienceConfig.experienceKey}
-          locale={AnswerExperienceConfig.locale}
-          apiKey={AnswerExperienceConfig.apiKey}
-          verticalKey={AnswerExperienceConfig.verticalKey}
-          experienceVersion="STAGING"
-          sessionTrackingEnabled={true}
-          endpoints={AnswerExperienceConfig.endpoints}    
-        >
-          
-          <LocationLayout _site={_site}/>
-     
-        </SearchHeadlessProvider>
-          
-          <BreadCrumbs
+            <SearchHeadlessProvider
+              experienceKey={AnswerExperienceConfig.experienceKey}
+              locale={AnswerExperienceConfig.locale}
+              apiKey={AnswerExperienceConfig.apiKey}
+              verticalKey={AnswerExperienceConfig.verticalKey}
+              experienceVersion="STAGING"
+              sessionTrackingEnabled={true}
+              endpoints={AnswerExperienceConfig.endpoints}
+            >
+              <LocationLayout _site={_site} />
+            </SearchHeadlessProvider>
+            <BreadCrumbs
               name={name}
               address={address}
               parents={dm_directoryParents}
               baseUrl={relativePrefixToRoot}
             ></BreadCrumbs>
             {/* {Onlineorder} */}
-
             <div className="nameheading ">
               <div className='banner-text'>
-                <h1 className="">{name}, {address.region}</h1><hr/>
+                <h1 className="">{name}, {address.region}</h1><hr />
                 {/* <div className="openClosestatus detail-page closeing-div">
                   <OpenClose timezone={timezone} hours={hours} />
                 </div>  */}
@@ -538,9 +509,7 @@ const Location: Template<ExternalApiRenderData> = ({
             </div>
             <div className="location-all-detail">
               <div className="location-information">
-
-                <Contact address={address} 
-                  phone={mainPhone} pickupHours={pickupHours} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
+                <Contact address={address} phone={mainPhone} pickupHours={pickupHours} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
                   yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} c_dishesMenu={c_dishesMenu} hours={hours} c_hoursAmenities={c_hoursAmenities} ></Contact>
                 {/* {
                   hours ?
@@ -561,11 +530,11 @@ const Location: Template<ExternalApiRenderData> = ({
                 <div className="mainfoodtext">
                   <div className="foodtext">
                     <div className="foodtextheading">DEAL IN {address.line2} ,{address.region}</div>
-                    <div className="fooddescription" style={{ fontSize: "20px" }} >{c_getdirectioncardimage.description} </div>
-                    <div className="foodcarddirection"> 
-                    <div className="getdirectionimagecard">
-                    <GetDirection buttonText={"Get directions"} address={address} latitude={displayCoordinate ? displayCoordinate.latitude : yextDisplayCoordinate.latitude} longitude={displayCoordinate ? displayCoordinate.longitude : yextDisplayCoordinate.longitude} /></div>
-                  </div>
+                    <div className="fooddescription" style={{ fontSize: "20px" }}>{c_getdirectioncardimage.description} </div>
+                    <div className="foodcarddirection">
+                      <div className="getdirectionimagecard">
+                        <GetDirection buttonText={"Get directions"} address={address} latitude={displayCoordinate ? displayCoordinate.latitude : yextDisplayCoordinate.latitude} longitude={displayCoordinate ? displayCoordinate.longitude : yextDisplayCoordinate.longitude} /></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -582,13 +551,9 @@ const Location: Template<ExternalApiRenderData> = ({
             <div className="mainreview">
               <div className="reviewheading"><h6>{c_tGIReviews.reviewHeading}</h6></div>
               <div className="totalreview">
-                <div className="treview">
-                  {Totalreview}{c_tGIReviews.totalOfReview.total}
-                </div>
+                <div className="treview">{Totalreview}{c_tGIReviews.totalOfReview.total}</div>
               </div>
-              <div className="whosereview  flex space-x-9">
-                {Whosereview}
-              </div>
+              <div className="whosereview  flex space-x-9">{Whosereview}</div>
             </div>
             <div className="maintgiborn">
               <div className="tgiborndetails">
@@ -602,17 +567,16 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
             </div>
             <div className="amenities">
-              <div className="mainheading">
-                {c_tGIAmenities.mainHeading}
-              </div>
+              <div className="mainheading">{c_tGIAmenities.mainHeading}</div>
               <div className="Amenitiesnamelist container flex space-x-9">
-                {c_tGIAmenities.tginames.map((element: any,index:number) => {
+                {c_tGIAmenities.tginames.map((element: any, index: number) => {
+             
                   return (
                     <>
                       <div className="amnamelist" key={index}>
                         <div className="amenitiesname">{element.headname} </div>
                         <div>
-                          {element.tGIlist.map((link: any,index:number) => {
+                          {element.tGIlist.map((link: any, index: number) => {
                             return (
                               <>
                                 <div className="amenatieslist" key={index}>{link.label}</div>
@@ -623,26 +587,20 @@ const Location: Template<ExternalApiRenderData> = ({
                       </div>
                     </>
                   )
-
-
-
+             
                 })}
-
               </div>
             </div>
-
             <div className="nearby-sec">
-          <div className="container">
-            <div className="sec-title"><h2 className="">{StaticData.NearStoretext}</h2></div>
-            <div className="nearby-sec-inner">
-              {yextDisplayCoordinate || cityCoordinate || displayCoordinate ?
-                <Nearby externalApiData={externalApiData} /> 
-             : ''}
+              <div className="container">
+                <div className="sec-title"><h2 className="">{StaticData.NearStoretext}</h2></div>
+                <div className="nearby-sec-inner">
+                  {yextDisplayCoordinate || cityCoordinate || displayCoordinate ?
+                    <Nearby externalApiData={externalApiData} />
+                    : ''}
+                </div>
+              </div>
             </div>
-          </div>
-          
-        </div>
-
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>

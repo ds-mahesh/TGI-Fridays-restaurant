@@ -4,7 +4,7 @@ import '@splidejs/react-splide/css';
 import { Options } from '@splidejs/splide';
 
 
-const PhotoSlider = (props: any, index: any) => {
+const PhotoSlider = (props: any) => {
   const { photoGallery, height, width,} = props;
 
   const mainOptions: Options = {
@@ -14,12 +14,9 @@ const PhotoSlider = (props: any, index: any) => {
     pagination: true,
 
   };
-
-
-
-  // const Happensatcultura =props?.c_newsStore?.map((link: any) => (
+ // const Happensatcultura =props?.c_newsStore?.map((link: any) => (
   const Dishesmenu = props?.c_dishesMenu?.map((link: any,i:any) => (
-    <SplideSlide>
+    <SplideSlide key={i}> 
       <div key={i} className="menues">
         <div>
       <img  src={link.menuimage?.url} alt={''} />
@@ -39,15 +36,8 @@ const PhotoSlider = (props: any, index: any) => {
   return (
     <>
       <Splide area-label="photo slider"
-        options={mainOptions}>
-
- 
-        {Dishesmenu}
-
-       
-      </Splide>
-
-
+        options={mainOptions}>{Dishesmenu}
+    </Splide>
     </>
   );
 };

@@ -202,6 +202,12 @@ const country: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
+      <BreadCrumbs
+          name={regionNames.of(name)}
+          address={address}
+          parents={dm_directoryParents}
+          baseUrl={relativePrefixToRoot}
+        ></BreadCrumbs>
         <div className="country-banner">
           <div className="imgcount">
                {Bannerimage}
