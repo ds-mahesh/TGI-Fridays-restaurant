@@ -10,6 +10,7 @@ import LocationCard from "../components/locatorPage/LocationCard";
 import PageLayout from "../components/layouts/PageLayout";
 import Geocode from "react-geocode";
 import UseMyLocation from "../components/locatorPage/UseMyLocation"
+import Facets from "../components/locatorPage/Facets"
 import { Address } from "../types/search/locations";
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect } from "react";
@@ -200,6 +201,7 @@ const Locator: Template<TemplateRenderProps> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
+            {/* <Facets /> */}
             {/* <div>Name:{name}</div>
         <div>Address:{address.line1}{address.line2} {address.city}</div>
         <div>{address.region}</div> */}

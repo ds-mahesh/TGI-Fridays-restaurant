@@ -1048,3 +1048,10 @@ margin: 0 auto;
     border-bottom: 1px solid #000;
     padding-bottom: 0.5em;
   }
+
+  .container .citychild .citycard{
+    border: 1px solid #D31A21;
+    height: 200px;
+  }
+
+  .near-location h4{font-size: large;}

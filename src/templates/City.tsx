@@ -306,14 +306,14 @@ const City: Template<TemplateRenderProps> = ({
       <>
 
 
-        <div className="w-full sm:w-1/2 xl:w-1/3 px-[15px]">
+        <div className="w-full xl:w-1/4 citycard">
           <div className="near-location" style={{}}>
             <h4>
               <Link eventName={"Location detail"} key={entity.slug} href={`/${detailPageUrl}`}>
                 {entity.name}
               </Link>
             </h4>
-            <div className="store-address">
+            <div className="store-address flex space-x-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21.23"
@@ -397,7 +397,7 @@ const City: Template<TemplateRenderProps> = ({
               What3Words
             </a>
           </div> */}
-            {entity.mainPhone && <div className="store-Pizza">
+            {entity.mainPhone && <div className=" flex space-x-4 store-Pizza">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="23.987"
@@ -616,7 +616,7 @@ const City: Template<TemplateRenderProps> = ({
       >
         <AnalyticsScopeProvider name={""}>
           
-         /
+         
           <PageLayout _site={_site} templateData={{ __meta, document }}>
           <SearchHeadlessProvider
           experienceKey={AnswerExperienceConfig.experienceKey}
@@ -656,7 +656,7 @@ const City: Template<TemplateRenderProps> = ({
               </h1>
               <div className="directory-country nearby-sec" style={{ backgroundColor: "lightcyan" }}>
                 <div className="container" >
-                  <div className="flex  flex-wrap justify-center -mx-[15px]" style={{}}>
+                  <div className="flex space-x-4  flex-wrap justify-center citychild" style={{}}>
                     {childrenDivs}
                   </div>
                 </div>
