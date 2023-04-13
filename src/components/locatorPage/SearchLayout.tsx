@@ -2,7 +2,6 @@ import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from 'react';
 import * as React from "react";
 import { LocationBias, Pagination } from "@yext/search-ui-react";
-import Facets from "./facets/Facets"
 
 import { Location } from "../../types/search/locations";
 import LocationCard from "./LocationCard";
@@ -219,7 +218,7 @@ const SearchLayout = (props: any): JSX.Element => {
   useEffect(() => {
     if (firstTimeRunners) {
       firstTimeRunners = false;
-      searchActions.resetFacets();
+      // searchActions.resetFacets();
       FirstLoad();
     }
   }, [])
@@ -247,7 +246,6 @@ const SearchLayout = (props: any): JSX.Element => {
           <div className="location-with-filter">
             <h1 className="">{StaticData.FindLocationtext}</h1>
           </div>
-          {/* <Facets /> */}
 
           <div className="search-field">
             {/* <FilterSearch
@@ -370,11 +368,9 @@ const SearchLayout = (props: any): JSX.Element => {
             </div>
           </PerfectScrollbar>
         </div>
-      
-      </div>
-      
 
-      
+
+      </div>
 
 
     </>

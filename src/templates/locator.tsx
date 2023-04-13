@@ -7,11 +7,10 @@ import { Location } from "../types/search/locations";
 import MapboxMap from "../components/MapboxMap";
 import MapPin from "../components/MapPin";
 import LocationCard from "../components/locatorPage/LocationCard";
-import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
 import PageLayout from "../components/layouts/PageLayout";
 import Geocode from "react-geocode";
 import UseMyLocation from "../components/locatorPage/UseMyLocation"
-import Facets from "../components/locatorPage/facets/Facets"
+import Facets from "../components/locatorPage/Facets"
 import { Address } from "../types/search/locations";
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect } from "react";
@@ -25,7 +24,7 @@ import {
   AnalyticsProvider,
   AnalyticsScopeProvider,
 } from "@yext/pages/components";
-import { AnswerExperienceConfig,answersHeadlessConfig } from "../config/answersHeadlessConfig";
+import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
 
 export const config: TemplateConfig = {
   stream: {
@@ -194,7 +193,6 @@ const Locator: Template<TemplateRenderProps> = ({
           logo: favicon,
         }}
       />
-       
       <AnalyticsProvider
         templateData={templateData}
         enableDebugging={AnalyticsEnableDebugging}
@@ -203,7 +201,7 @@ const Locator: Template<TemplateRenderProps> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-           
+            {/* <Facets /> */}
             {/* <div>Name:{name}</div>
         <div>Address:{address.line1}{address.line2} {address.city}</div>
         <div>{address.region}</div> */}
@@ -218,22 +216,10 @@ const Locator: Template<TemplateRenderProps> = ({
             >
               <LocationLayout />
               <SearchLayout _site={_site} />
-              
             </SearchHeadlessProvider>
-            {/* <AnswersHeadlessProvider
-            experienceKey={answersHeadlessConfig.experienceKey}
-            locale={answersHeadlessConfig.locale}
-            apiKey={answersHeadlessConfig.apiKey}
-            verticalKey={answersHeadlessConfig.verticalKey}
-            experienceVersion="STAGING"
-            sessionTrackingEnabled={true}
-            endpoints={answersHeadlessConfig.endpoints}>
-<Facets />
-            </AnswersHeadlessProvider> */}
           </PageLayout>
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
-     
     </>
   );
 };
