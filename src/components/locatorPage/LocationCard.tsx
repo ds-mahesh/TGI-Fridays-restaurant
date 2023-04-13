@@ -46,7 +46,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     }
   }
 
-  const { address ,hours} = result.rawData;
+  const { address ,hours,mainPhone} = result.rawData;
   //     var name: any = result.rawData.name?.toLowerCase();
   //   var region: any = result.rawData.address.region?.toLowerCase();
   //   var initialregion: any = region.toString();
@@ -86,6 +86,10 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
             <div className="icon-row content-col address-with-availablity notHighlight">
               <Address address={address} />
+              <div className="phoneno flex" >
+                <img src="https://www.pngitem.com/pimgs/m/156-1568270_blue-phone-icon-png-clipart-png-download-transparent.png" alt={''} />
+                <button> {mainPhone}</button></div>
+             
               {result.rawData.hours ? <>
                 <div className="mt-2">
                   {/* <h6>Opening Hours</h6> */}

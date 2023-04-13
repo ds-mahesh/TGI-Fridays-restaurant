@@ -1,6 +1,7 @@
 import { useAnswersState, useAnswersActions, DisplayableFacetOption } from '@yext/answers-headless-react'
-import { CompositionMethod, useComposedCssClasses } from "../../hooks/useComposedCssClasses";;
+import { CompositionMethod, useComposedCssClasses } from "../../../hooks/useComposedCssClasses";;
 import Facet,{ FacetConfig, FacetCssClasses } from './Facet';
+import * as React from 'react';
 // import { Divider } from './StaticFilters';
 
 

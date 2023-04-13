@@ -289,7 +289,6 @@ export interface Location {
 	description?: string,
 	hours?: Hours,
 	logo?: ComplexImage,
-	name: string,
 	categories?: any,
 	cityCoordinate?: Coordinate,
 	closed?: boolean,

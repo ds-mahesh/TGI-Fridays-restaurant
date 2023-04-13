@@ -1,9 +1,10 @@
 import { useAnswersUtilities, DisplayableFacet, DisplayableFacetOption } from '@yext/answers-headless-react'
 import { useState } from 'react';
 import useCollapse from 'react-collapsed';
-import { CompositionMethod, useComposedCssClasses } from "../../hooks/useComposedCssClasses";
-import renderCheckboxOption, { CheckboxOptionCssClasses } from './utils/renderCheckboxOption';
+import { CompositionMethod, useComposedCssClasses } from "../../../hooks/useComposedCssClasses";
+import renderCheckboxOption, { CheckboxOptionCssClasses } from '../utils/renderCheckboxOption';
 import { ReactComponent as DropdownIcon } from "../../icons/chevron.svg";
+import * as React from 'react';
 
 export type onFacetChangeFn = (fieldId: string, option: DisplayableFacetOption) => void
 

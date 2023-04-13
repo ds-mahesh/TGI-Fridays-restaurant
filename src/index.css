@@ -1055,3 +1055,11 @@ margin: 0 auto;
   }
 
   .near-location h4{font-size: large;}
+  .phoneno button{  
+    font-size: 16px;
+    color: #000;
+  }
+  .phoneno img {
+    height: 20px;
+    width: 20px;
+  }

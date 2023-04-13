@@ -375,7 +375,7 @@ function UnwrappedGoogleMaps({
   }
 
   const hours = (result: any) => {
-    return <Hours hours={result} />;
+    return <Hours hours={result} c_specific_day={result}/>;
   };
   function addActiveGrid(index: any) {
     const elements = document.querySelectorAll(".result");
@@ -437,7 +437,7 @@ function UnwrappedGoogleMaps({
             }
             $(".result").removeClass("fixed-hover");
             // console.log('refLocationResults', refLocationResults);
-            refLocationResults.current.map((result, i) => {
+            refLocationResults.current.map((result:any, i:number) => {
               if (i == index) {
                 setHover(false);
                 isHover = false;
