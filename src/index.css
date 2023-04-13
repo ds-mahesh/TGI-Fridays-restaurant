@@ -1054,7 +1054,17 @@ margin: 0 auto;
     height: 200px;
   }
 
-  .near-location h4{font-size: large;}
+  .near-location h4{
+    font-size: 20px; 
+    margin-left: 30px; 
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    font-family: "gothic", Arial, sans-serif;
+    color: #000;
+  }
+  .near-location {
+    padding-left: 10px;
+  }
   .phoneno button{  
     font-size: 16px;
     color: #000;
@@ -1062,4 +1072,9 @@ margin: 0 auto;
   .phoneno img {
     height: 20px;
     width: 20px;
+  }
+  .store-address p{
+    color: #000;
+    font-family: "gothic", Arial, sans-serif;
+    font-size: 16px;
   }
