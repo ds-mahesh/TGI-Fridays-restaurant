@@ -101,9 +101,9 @@ body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
 /* banner sec */
 .banner-sec{ @apply bg-gray-light py-16 mt-4}
 .banner-sec h1{ @apply text-3xl text-center uppercase }
-.locator-main{ @apply  mt-10  align-bottom w-full max-w-[87.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
-.left-listing{ @apply w-full md:w-[30rem] lg:w-[33.6875rem] float-left }
-.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  md:pl-8 float-right}
+.locator-main{ @apply  mt-10  align-bottom w-full max-w-[92.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
+.left-listing{ @apply w-full md:w-[30rem] lg:w-[38.6875rem] float-left }
+.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_38.6875rem)]  md:pl-8 float-right}
 .locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
 .hero-section .hero-content .banner-text.banner-dark-bg{ @apply  border-l-0 inline-block flex flex-col items-center p-4      rounded-lg backdrop-blur-sm bg-Dark-red mx-auto w-[340px] sm:w-[500px] px-2.5 text-center}
 .hero-section .hero-content .banner-text.banner-dark-bg h1{  @apply text-2xl md:text-[1.75rem] mb-1.5 font-normal}
@@ -133,18 +133,19 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
 .location p{ @apply mr-2 absolute rounded-lg -left-4 top-[0px] sm:top-[2px] xl:top-1}
 .search-bx .whitespace-nowrap{  @apply text-white !font-normal py-0 }
-.location{ @apply  border-b border-[#d8d8d8]  mt-0 }
+.location{ @apply  border-b border-[#d8d8d8]  mt-[1.5rem] }
 .location .result-inner .address-with-availablity {@apply mb-0}
+.result-inner {border: 1px solid #D31A21;}
 
 .location .result-inner .svg-map-icn svg{@apply fill-gray }
 .location.fixed-hover .result-inner .svg-map-icn svg{@apply fill-red }
 
    
-.location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7}
+/* .location .button-bx{  @apply max-w-lg justify-start xl:mx-auto flex-row lg:pl-7} */
 .result-list .location{ @apply first:mt-0}
 .location .button-bx .btn{@apply  font-second-main-font text-lg  border-none text-white    }
-.location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black underline  }
-.location .button-bx .btn + .btn{  @apply mt-2 ml-2 md:mt-0 hover:no-underline   w-auto }
+.location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black   }
+.location .button-bx .btn + .btn{  @apply mt-2 hover:no-underline   w-auto }
 .location .button-bx .btn:hover svg{@apply !fill-red }
 .map-count{ @apply absolute text-white left-1/2 -translate-x-1/2 top-2 md:top-1 2xl:top-1 font-second-main-font text-xs }
 #result-1 .result-inner{ @apply pt-0 md:pt-4}
@@ -714,7 +715,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .hoursamenities h5 {font-size: 1.375rem; text-transform: uppercase; font-weight: bold; color: #000;}
 .sortlist ul li {font-family: "gothic", Arial, sans-serif; font-size: 18px; padding: 8px 0; color: #000;}
 .sortlist {padding: 10px 0;}
-.button-bx .btn {
+.location-information .button-bx .btn {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 1.1rem;
@@ -865,14 +866,28 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 }
 
 /* location card */
-.address span {font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
+.address span { font-family: "gothic", Arial, sans-serif;
   font-size: 1.2rem;
   color: #000;}
-.result-inner .center-column .button-bx .btn{
+/* .result-inner .center-column .button-bx .btn{
   background-color: #D31A21;
   color: #fff;
+} */
+.result-inner .center-column .button-bx .btn {
+  color: #D31A21;
+  border: 1px solid #D31A21;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  width: 160px;
+  height: 45px;
+  font-weight: bold;
+  font-family:  "gothic", Arial, sans-serif;
 }
-
+.servicesoncard span{
+  font-family:  "gothic", Arial, sans-serif;
+  color: #000;
+  font-size: 1.2rem;
+}
 .left-listing .button-bx #view-more-button {width: 160px;}
 .button-bx .buttons {display: flex;
   justify-content: center;}
@@ -888,6 +903,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
     line-height: 1.75rem;
     line-height: 1.25;
     margin-left: 2rem;
+    text-transform: uppercase;
   }
 
   /* ---------------- */
@@ -898,15 +914,30 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   color: #000;} 
 
 .location .button-bx {
-  padding-left: 1.75rem;
+  /* padding-left: 1.75rem; */
+  /* display: flex; */
+}
+.smalllocationcard {
   display: flex;
+  width: 100%;
+}
+.address-cta .addsec {
+  width: 66%;
+}
+.address-cta .address{
+  padding-left: 28px;
+}
+.smalllocationcard .hours-services {
+  margin-left: 28px;
+}
+.grid-container {
+  display: grid;
 }
 
 .address-with-availablity {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 2rem;
 }
 
 /* near hours amenities */
@@ -1065,7 +1096,7 @@ margin: 0 auto;
   .near-location {
     padding-left: 10px;
   }
-  .phoneno button{  
+  .phoneno span{  
     font-size: 16px;
     color: #000;
   }

@@ -1,7 +1,8 @@
 import { useAnswersActions, useAnswersState, Filter, Matcher } from '@yext/answers-headless-react';
-import { CompositionMethod, useComposedCssClasses } from '../hooks/useComposedCssClasses';
+import { CompositionMethod, useComposedCssClasses } from '../../hooks/useComposedCssClasses';
 import { isDuplicateFilter } from '../utils/filterutils';
 import renderCheckboxOption, { CheckboxOptionCssClasses } from './utils/renderCheckboxOption';
+import * as React from 'react';
 
 interface FilterOption {
   fieldId: string,

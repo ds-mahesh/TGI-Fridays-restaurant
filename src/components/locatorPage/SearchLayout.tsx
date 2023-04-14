@@ -1,8 +1,7 @@
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from 'react';
 import * as React from "react";
-import { LocationBias, Pagination } from "@yext/search-ui-react";
-
+import { LocationBias, Pagination, StandardFacets } from "@yext/search-ui-react";
 import { Location } from "../../types/search/locations";
 import LocationCard from "./LocationCard";
 import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
@@ -17,7 +16,6 @@ import Banner from "../locationDetail/banner";
 import LoadingSpinner from "../commons/LoadingSpinner";
 import { breadcrumbhome, center_latitude, center_longitude, googleApikey, search_icn, UseMylocationsvg } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
-
 import FilterSearch from "../locatorPage/FilterSearch";
 import ViewMore from "./ViewMore";
 import VerticalResults from "../VerticalResults";
@@ -235,7 +233,6 @@ const SearchLayout = (props: any): JSX.Element => {
             </li>
             <li>{StaticData.locator_breadcrumb}</li>
           </ul>
-
         </div>
       </div>
       <div className="locator-main">
@@ -246,7 +243,6 @@ const SearchLayout = (props: any): JSX.Element => {
           <div className="location-with-filter">
             <h1 className="">{StaticData.FindLocationtext}</h1>
           </div>
-
           <div className="search-field">
             {/* <FilterSearch
              ref={filterRef}
@@ -305,14 +301,11 @@ const SearchLayout = (props: any): JSX.Element => {
                 <span dangerouslySetInnerHTML={{ __html: search_icn }} />
                 </button> */}
           </div>
-
           <div className="fliter-sec">
             <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
-              <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
-
+              {/* <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} /> */}
               <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
             </button>
-
             <ResultsCount
               customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }}
             />
@@ -320,14 +313,16 @@ const SearchLayout = (props: any): JSX.Element => {
         </div>
         <div className="mobile-btns">
           <div className="button-bx">
-
             <a className="btn listBtn" href="javascript:void(0);" onClick={() => {
               document.body.classList.remove('mapView')
-
             }}> List View</a>
             <a className="btn mapBtn" href="javascript:void(0);" onClick={addClass}> Map View</a>
           </div>
         </div>
+        <div><StandardFacets
+          customCssClasses={{ container: "filter-items" }}
+          defaultExpanded={true}
+        ></StandardFacets></div>
         <div className=" map-section ">
           <GoogleMaps
             apiKey={googleApikey}
@@ -363,7 +358,8 @@ const SearchLayout = (props: any): JSX.Element => {
                   <a className="underline " href='/gb.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a>
                 </div> : ''}
               <div className="button-bx">
-                <ViewMore className={" btn notHighlight button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />
+                {/* <ViewMore className={" btn notHighlight button view-more"} idName={"view-more-button"} buttonLabel={"View More"} /> */}
+                <Pagination />
               </div>
             </div>
           </PerfectScrollbar>

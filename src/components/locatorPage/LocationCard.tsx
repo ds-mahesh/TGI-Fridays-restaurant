@@ -38,7 +38,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   }
 
   function show_hide() {
-    var click:any = document.getElementById("list-hours");
+    var click: any = document.getElementById("list-hours");
     if (click.style.display === "none") {
       click.style.display = "block";
     } else {
@@ -46,7 +46,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
     }
   }
 
-  const { address ,hours,mainPhone} = result.rawData;
+  const { address, hours, mainPhone, c_hoursAmenities } = result.rawData;
   //     var name: any = result.rawData.name?.toLowerCase();
   //   var region: any = result.rawData.address.region?.toLowerCase();
   //   var initialregion: any = region.toString();
@@ -85,67 +85,98 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
 
             <div className="icon-row content-col address-with-availablity notHighlight">
-              <Address address={address} />
-              <div className="phoneno flex" >
-                <img src="https://www.pngitem.com/pimgs/m/156-1568270_blue-phone-icon-png-clipart-png-download-transparent.png" alt={''} />
-                <button> {mainPhone}</button></div>
-             
-              {result.rawData.hours ? <>
-                <div className="mt-2">
-                  {/* <h6>Opening Hours</h6> */}
-                  {result.rawData.hours?.reopenDate ? <>
-                    <div className="icon"> <img className=" " src={timesvg} width="20" height="20" alt="" /> </div>
-                    <div className=" flex open-now-string items-center " data-id={`main-shop-${result.rawData.id}`} onClick={opentime}>
-                      {StaticData.tempClosed}
+              <div className="smalllocationcard">
+                <div className="w-full">
+                  <div className="address-cta flex">
+                    <div className="addsec">
+                      <Address address={address} />
+                      <div className="phoneno flex" >
+                        <img src="https://www.pngitem.com/pimgs/m/156-1568270_blue-phone-icon-png-clipart-png-download-transparent.png" alt={''} />
+                        <span> {mainPhone}</span></div>
                     </div>
-                  </>
-                    : <>
-                      <div className="dropdown" style={{position:"relative",display:"inline-block"}}>
-                        <button onClick={show_hide}  className=" flex open-now-string items-center" data-id={`main-shop-${result.rawData.id}`} >
-                          <OpenClose
-                            timezone={result.rawData.timezone}
-                            hours={result.rawData.hours}
-                            deliveryHours={result.rawData.hours}>
-                          </OpenClose>
-                          <img className="h-9 w-9" src="https://cdn-icons-png.flaticon.com/128/9347/9347220.png" alt="" style={{ marginLeft: "5px", marginTop: "5px" }} />
-                        </button>
+                    <div className="button-bx">
+                      <div>
+                        <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
+                          data-ya-track={`viewStore -${result.rawData.name}`}
+                          eventName={`viewStore -${result.rawData.name}`}
+                          rel="noopener noreferrer"
+                        >
+                          {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
+                          {StaticData.StoreDetailbtn}
+                        </Link>
+                        {result.rawData.displayCoordinate ?
+                          <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
+                          : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
+                      </div>
+                    </div>
+                  </div>
 
-                        <div id="list-hours" className="dropdown-content" style={{display:"none"}}>
-                          <Hours hours={hours} />
+                  {result.rawData.hours ? <>
+                    <div className="mt-2">
+                      <div className="hours-services">
+                        {/* <h6>Opening Hours</h6> */}
+                        {result.rawData.hours?.reopenDate ? <>
+                          <div className="icon"> <img className=" " src={timesvg} width="20" height="20" alt="" /> </div>
+                          <div className=" flex open-now-string items-center " data-id={`main-shop-${result.rawData.id}`} onClick={opentime}>
+                            {StaticData.tempClosed}
+                          </div>
+                        </>
+                          : <>
+                            <div className="dropdown" style={{ position: "relative", display: "inline-block" }}>
+                              <button onClick={show_hide} className=" flex open-now-string items-center" data-id={`main-shop-${result.rawData.id}`} >
+                                <OpenClose
+                                  timezone={result.rawData.timezone}
+                                  hours={result.rawData.hours}
+                                  deliveryHours={result.rawData.hours}>
+                                </OpenClose>
+                                <img className="h-9 w-9" src="https://cdn-icons-png.flaticon.com/128/9347/9347220.png" alt="" style={{ marginLeft: "5px", marginTop: "5px" }} />
+                              </button>
+
+                              <div id="list-hours" className="dropdown-content" style={{ display: "none" }}>
+                                <Hours hours={hours} />
+                              </div>
+                            </div>
+                          </>}
+                        <div className="servicesoncard grid-container">
+                          {c_hoursAmenities.tGIlist.map((e: any) =>
+                            <span>{e.label}</span>
+                          )
+                          }
                         </div>
                       </div>
-</>}
 
-                  {/* <div className={`storelocation-openCloseTime  capitalize hidden`}>
+                      {/* <div className={`storelocation-openCloseTime  capitalize hidden`}>
                     {hoursopen?
                    typeof result.rawData.hours === "undefined" ? ("") :
                      <Hours key={result.rawData.name} additionalHoursText={result.rawData.additionalHoursText} hours={result.rawData.hours} c_specific_day={result.rawData.c_specific_day} />
                    :''}
                 </div> */}
-                </div></> : <div className="closeddot notHighlight red-dot">
-                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
-                  <circle id="Ellipse_5" data-name="Ellipse 5" cx="4" cy="4" r="4" fill="#ad1e1f" />
-                </svg>
-                <div className="hours-info text-lg font-second-main-font closeddot">
-                  Closed
-                </div>
-              </div>}
+                    </div></> : <div className="closeddot notHighlight red-dot">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                      <circle id="Ellipse_5" data-name="Ellipse 5" cx="4" cy="4" r="4" fill="#ad1e1f" />
+                    </svg>
+                    {/* <div className="hours-info text-lg font-second-main-font closeddot">
+                      Closed
+                    </div> */}
 
+                  </div>}
+                </div>
+              </div>
             </div>
 
-            <div className="button-bx">
+            {/* <div className="button-bx">
               <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
                 data-ya-track={`viewStore -${result.rawData.name}`}
                 eventName={`viewStore -${result.rawData.name}`}
                 rel="noopener noreferrer"
-              >
-                {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
-                {StaticData.StoreDetailbtn}
-              </Link>
+              > */}
+            {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
+            {/* {StaticData.StoreDetailbtn} */}
+            {/* </Link>
               {result.rawData.displayCoordinate ?
                 <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
                 : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
-            </div>
+            </div> */}
 
 
 
