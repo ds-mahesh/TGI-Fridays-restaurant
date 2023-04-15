@@ -3,7 +3,6 @@ import { FilterGroup, FilterGroupCssClasses } from './FilterGroup';
 import { Fragment } from 'react';
 import { DisplayableFacet } from '@yext/search-headless-react';
 import * as React from 'react';
-import { StandardFacets} from "@yext/search-ui-react";
 
 /**
  * The CSS class interface for {@link StandardFacets}.

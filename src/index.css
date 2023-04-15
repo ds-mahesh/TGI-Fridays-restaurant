@@ -883,6 +883,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   font-weight: bold;
   font-family:  "gothic", Arial, sans-serif;
 }
+
+.result-inner .center-column .button-bx .btn:hover {
+  background-color: #D31A21;
+  color: #f3f3f3;
+}
 .servicesoncard span{
   font-family:  "gothic", Arial, sans-serif;
   color: #000;
@@ -1099,6 +1104,7 @@ margin: 0 auto;
   .phoneno span{  
     font-size: 16px;
     color: #000;
+    padding-left: 7px;
   }
   .phoneno img {
     height: 20px;

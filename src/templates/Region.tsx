@@ -40,12 +40,12 @@ export const config: TemplateConfig = {
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      "dm_directoryParents.dm_directoryChildrenCount",
+      "dm_directoryParents.dm_baseEntityCount",
       "dm_directoryParents.meta.entityType",
       "dm_directoryChildren.name",
       "dm_directoryChildren.address",
       "dm_directoryChildren.slug",
-      "dm_directoryChildren.dm_directoryChildrenCount",
+      "dm_directoryChildren.dm_baseEntityCount",
       "dm_directoryChildren.dm_directoryChildren.name",
       "dm_directoryChildren.dm_directoryChildren.id",
       "dm_directoryChildren.dm_directoryChildren.slug",
@@ -237,7 +237,7 @@ const region: Template<TemplateRenderProps> = ({
 
     if (typeof entity.dm_directoryChildren != "undefined") {
 
-      if (entity.dm_directoryChildrenCount == 1) {
+      if (entity.dm_baseEntityCount == 1) {
         entity.dm_directoryChildren.map((res: any) => {
          console.log(res,"res")
           let detlslug1 = "";
@@ -263,9 +263,9 @@ const region: Template<TemplateRenderProps> = ({
       <li className=" storelocation-category">
         <a
           key={entity.slug}
-          href={slug +"/"+ entity.slug + ".html"}
+          href={detlslug}
         >
-          {entity.name} ({entity.dm_directoryChildrenCount})
+          {entity.name} ({entity.dm_baseEntityCount})
         </a>
       </li>
     )

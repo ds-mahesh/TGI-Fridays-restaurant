@@ -361,14 +361,11 @@ const SearchLayout = (props: any): JSX.Element => {
                 {/* <ViewMore className={" btn notHighlight button view-more"} idName={"view-more-button"} buttonLabel={"View More"} /> */}
                 <Pagination />
               </div>
+              {/* <LocationBias /> */}
             </div>
           </PerfectScrollbar>
         </div>
-
-
       </div>
-
-
     </>
   );
 };

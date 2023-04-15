@@ -51,7 +51,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.address",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.name",
-      "dm_directoryChildren.dm_directoryChildrenCount",
+      "dm_directoryChildren.dm_baseEntityCount",
       "dm_directoryChildren.dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
@@ -140,7 +140,7 @@ const country: Template<TemplateRenderProps> = ({
 
 
     if (typeof entity.dm_directoryChildren != "undefined") {
-      if (entity.dm_directoryChildrenCount == 1) {
+      if (entity.dm_baseEntityCount == 1) {
         entity.dm_directoryChildren.map((res: any) => {
 
           let detlslug1 = "";
@@ -150,15 +150,15 @@ const country: Template<TemplateRenderProps> = ({
             let slug = slugString;
             detlslug1 = `${slug}.html`;
           } else {
-            detlslug1 = `${res.slug.toString()}.html`;
+            detlslug1 = slug + "/" + entity.slug + "/" + res.slug + ".html";
           }
-          if (res.meta.entityType.id == 'ce_city') {
-            detlslug1 = "gb/" + detlslug1;
-          } else {
-            detlslug1 = detlslug1;
-          }
+          // if (res.meta.entityType.id == 'ce_city') {
+          //   detlslug1 = "gb/" + detlslug1;
+          // } else {
+          //   detlslug1 = detlslug1;
+          // }
 
-          // console.log(entity.name, res);
+          console.log(entity.name, res);
 
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
 
@@ -167,7 +167,7 @@ const country: Template<TemplateRenderProps> = ({
               let slug =slugString;
               detlslug1 = `${slug}.html`;
             } else {
-              detlslug1 = `${detl.slug.toString()}.html`;
+              detlslug= `${detl.slug.toString()}.html`;
             }
 
             detlslug = detlslug1;
@@ -186,9 +186,9 @@ const country: Template<TemplateRenderProps> = ({
       <li key={index} className=" storelocation-category">
         <a
           key={entity.slug}
-          href={slug +"/"+ entity.slug + ".html"}
+          href={detlslug}
         >
-          {entity.name} ({entity.dm_directoryChildrenCount})
+          {entity.name} ({entity.dm_baseEntityCount})
         </a>
       </li>
     )
