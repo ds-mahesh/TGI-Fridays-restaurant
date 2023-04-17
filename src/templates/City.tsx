@@ -44,7 +44,7 @@ export const config: TemplateConfig = {
   stream: {
     $id: "City",
     filter: {
-      savedFilterIds: ["dm_stores-directory_address_city"],
+      // savedFilterIds: ["dm_stores-directory_address_city"],
       entityTypes: ["ce_city"],
     },
     fields: [
@@ -60,8 +60,8 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.name",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.id",
-      "dm_directoryParents.dm_directoryChildrenCount",
-      "dm_directoryChildren.dm_directoryChildrenCount",
+      "dm_directoryParents.dm_baseEntityCount",
+      "dm_directoryChildren.dm_baseEntityCount",
       "dm_directoryChildren.address",
       "dm_directoryChildren.hours",
       "dm_directoryChildren.mainPhone",

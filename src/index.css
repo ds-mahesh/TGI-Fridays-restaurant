@@ -164,7 +164,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
      border-black border  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
 .button-bx .btn + .btn{  @apply mt-2 sm:mt-0}     
 /* .button-bx .btn:hover svg{@apply fill-white  } */
-.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_11rem)]}
+.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_1rem)]}
 .scrollbar-container.ps--active-y{ @apply pr-6}
 body .ps:hover .ps__rail-y{@apply opacity-100}
 body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
@@ -304,7 +304,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .pagination-conatiner{ @apply mt-4}
 .nearby-btn .btn{ @apply !w-full}
 .nearby-card .button-bx{@apply ml-0 lg:ml-0 flex-row justify-start }
-.nearby-card .button-bx .btn{@apply  hover:bg-hover-btn font-second-main-font py-2.5  border-none text-white  }
+.nearby-card .button-bx .btn{@apply  hover:bg-hover-btn font-second-main-font py-2.5  border-none  }
 .nearby-card .button-bx .btn.notHighligh{@apply w-full md:w-[48%] ml-2 bg-white justify-start  border-none text-black underline  }
 .nearby-card .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto hover:no-underline}
 .nearby-card .button-bx .btn:hover svg{@apply !fill-red }
@@ -765,6 +765,10 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   background-color: #D31A21;
   color: #f3f3f3;
 }
+
+.foodimage img{
+  height: 100%;
+}
 .getdirectionimagecard {
   height: 50px;
   color: red;
@@ -1114,4 +1118,10 @@ margin: 0 auto;
     color: #000;
     font-family: "gothic", Arial, sans-serif;
     font-size: 16px;
+  }
+
+  /* state page */
+  .container .region-list .storelocation-category a{
+    color: #D31A21;
+    border: 1px solid #D31A21;
   }

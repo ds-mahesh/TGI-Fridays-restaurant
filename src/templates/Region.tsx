@@ -54,7 +54,7 @@ export const config: TemplateConfig = {
     // Defines the scope of entities that qualify for this stream.
     filter: {
       entityTypes: ["ce_region"],
-      savedFilterIds: ["dm_stores-directory_address_region"]
+      // savedFilterIds: ["dm_stores-directory_address_region"]
     },
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -299,7 +299,7 @@ const region: Template<TemplateRenderProps> = ({
           {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
           
 
-          <div className="content-list" style={{backgroundColor:"lightskyblue"}}>
+          <div className="content-list" >
             <div className="container">
             <div className="sec-title">
                 <h2 style={{ textAlign: "center" }}>
