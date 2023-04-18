@@ -170,11 +170,11 @@ function UnwrappedGoogleMaps({
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };
-  function zoomMapTo(zoomTo, centerToSet = false) {
-    currentMapZoom = map.getZoom();
+  function zoomMapTo(zoomTo:any, centerToSet =false) {
+    currentMapZoom = map?.getZoom();
     const newZoom =
       currentMapZoom > zoomTo ? currentMapZoom - 1 : currentMapZoom + 1;
-    map.setZoom(newZoom);
+    map?.setZoom(newZoom);
     if (newZoom != zoomTo && !stopAnimation)
       sleep(200).then(() => {
         zoomMapTo(zoomTo, centerToSet);
@@ -182,10 +182,10 @@ function UnwrappedGoogleMaps({
     if (newZoom == zoomTo) {
       stopAnimation = false;
       if (centerToSet) {
-        if (typeof map.panTo != "undefined") {
-          map.panTo(centerToSet);
+        if (typeof map?.panTo != "undefined") {
+          map?.panTo(centerToSet);
         } else {
-          map.setCenter(centerToSet);
+          map?.setCenter(centerToSet);
         }
       }
     }
@@ -317,7 +317,7 @@ function UnwrappedGoogleMaps({
       if (!info) {
         markers1.current[i].setIcon(Hovermap);
       }
-      locationResults.map((result, index) => {
+      locationResults.map((result:any, index:number) => {
         if (i == index) {
           const resultelement = document.querySelectorAll(
             `.result-list-inner-${index + 1}`
@@ -327,7 +327,7 @@ function UnwrappedGoogleMaps({
             resultelement[index].classList.add("fixed-hover");
           }
           const position = getPosition(locationResults[index]);
-          map.setCenter(position);
+          map?.setCenter(position);
           Infowindow(i, result);
           scrollToRow(index);
         }
@@ -359,7 +359,7 @@ function UnwrappedGoogleMaps({
       setHover(true);
       info = false;
       infoWindow.current.close();
-      locationResults.map((result, index) => {
+      locationResults.map((result:any, index:number) => {
         const resultelement = document.querySelectorAll(
           `.result-list-inner-${index + 1}`
         );
