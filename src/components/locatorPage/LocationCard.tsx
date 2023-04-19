@@ -3,12 +3,15 @@ import { CardComponent } from "@yext/search-ui-react";
 import { Location } from "../../types/search/locations";
 import GetDirection from "../commons/GetDirection";
 import redmapimage from "../../images/red-map.svg";
+import Phonesvg from "../../images/phone.svg";
 import timesvg from "../../images/watch-icn.svg"
 import Address from "../commons/Address";
 import OpenClose from "../commons/openClose";
 import { StaticData } from "../../../sites-global/staticData";
 import { Link } from "@yext/pages/components";
 import Hours from "../commons/hours";
+import Holidayhours from "../locationDetail/Holdayhours";
+import Model from "../locationDetail/Model";
 
 
 const metersToMiles = (meters: number) => {
@@ -68,8 +71,10 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
         <div className="center-column">
           <div className="lp-param-results lp-subparam-hours">
             <div className="location-name-miles icon-row">
-              <div className="icon text-black relative"> <img className=" " src={redmapimage} width="20" height="20"
-                alt={''} /><span className="map-count">D</span></div>
+              <div className="icon text-black relative"> <img className=" " src="https://th.bing.com/th/id/OIP.Bi9ogpKNDPfaQb0eTwI-iwHaHa?w=202&h=202&c=7&r=0&o=5&pid=1.7" width="20" height="20"
+                alt={''} />
+                {/* <span className="map-count">D</span> */}
+                </div>
               <h2><Link className="inline-block notHighlight"
                 data-ya-track={`viewDetail -${result.rawData.name}`}
                 eventName={`viewDetail -${result.rawData.name}`}
@@ -91,7 +96,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                     <div className="addsec">
                       <Address address={address} />
                       <div className="phoneno flex" >
-                        <img src="https://www.pngitem.com/pimgs/m/156-1568270_blue-phone-icon-png-clipart-png-download-transparent.png" alt={''} />
+                        <img src={Phonesvg} alt={''} />
                         <span> {mainPhone}</span></div>
                     </div>
                     <div className="button-bx">
@@ -114,6 +119,10 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   {result.rawData.hours ? <>
                     <div className="mt-2">
                       <div className="hours-services">
+                        <div><Model
+                        name={StaticData.Holdiay}
+                        holidayHours={hours.holidayHours}
+                      /></div>
                         {/* <h6>Opening Hours</h6> */}
                         {result.rawData.hours?.reopenDate ? <>
                           <div className="icon"> <img className=" " src={timesvg} width="20" height="20" alt="" /> </div>
@@ -131,7 +140,6 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                                 </OpenClose>
                                 <img className="h-9 w-9" src="https://cdn-icons-png.flaticon.com/128/9347/9347220.png" alt="" style={{ marginLeft: "5px", marginTop: "5px" }} />
                               </button>
-
                               <div id="list-hours" className="dropdown-content" style={{ display: "none" }}>
                                 <Hours hours={hours} />
                               </div>
@@ -139,7 +147,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                           </>}
                         <div className="servicesoncard grid-container">
                           {c_hoursAmenities.tGIlist.map((e: any) =>
-                            <span>{e.label}</span>
+                            <span>*{e.label}</span>
                           )
                           }
                         </div>

@@ -517,16 +517,16 @@ function UnwrappedGoogleMaps({
               ""
             )}
           </div>
-          {/* {result.rawData.mainPhone?
-    <div className="icon-row">
+          {result.rawData.mainPhone?
+    <div className="icon-row flex space-x-6">
       <div className="icon"> <img className=" " src={Phonesvg} width="20" height="20" alt="" />
       </div>
       <div className="content-col">
-        <h6>Telephone</h6>
+        {/* <h6>Telephone</h6> */}
         <a id="address" className="notHighlight" href={`tel:${result.rawData.mainPhone}`}>
           {result.rawData.mainPhone}</a>
       </div>
-    </div>:''} */}
+    </div>:''}
 
           {result.rawData.hours && result.rawData.hours.reopenDate ? (
             ""

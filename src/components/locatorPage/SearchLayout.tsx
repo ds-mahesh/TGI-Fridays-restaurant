@@ -80,8 +80,8 @@ const SearchLayout = (props: any): JSX.Element => {
       );
     }
     params1 = {
-      latitude: 42.68375,
-      longitude: -73.839631,
+      latitude: 40.7648,
+      longitude: -73.9808,
     };
     SetNewparam(params1);
     // mapzoom=8;
@@ -319,11 +319,11 @@ const SearchLayout = (props: any): JSX.Element => {
             <a className="btn mapBtn" href="javascript:void(0);" onClick={addClass}> Map View</a>
           </div>
         </div>
-        <div><StandardFacets
+        {/* <div><StandardFacets
           customCssClasses={{ container: "filter-items" }}
           defaultExpanded={true}
-        ></StandardFacets></div>
-        <div className=" map-section ">
+        ></StandardFacets></div> */}
+        <div className="map-section ">
           <GoogleMaps
             apiKey={googleApikey}
             centerLatitude={centerLatitude}

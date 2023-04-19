@@ -103,7 +103,7 @@ body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
 .banner-sec h1{ @apply text-3xl text-center uppercase }
 .locator-main{ @apply  mt-10  align-bottom w-full max-w-[92.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
 .left-listing{ @apply w-full md:w-[30rem] lg:w-[38.6875rem] float-left }
-.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_38.6875rem)]  md:pl-8 float-right}
+.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_38.6875rem)]  md:pl-8 float-right mt-2 md:mt-28}
 .locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
 .hero-section .hero-content .banner-text.banner-dark-bg{ @apply  border-l-0 inline-block flex flex-col items-center p-4      rounded-lg backdrop-blur-sm bg-Dark-red mx-auto w-[340px] sm:w-[500px] px-2.5 text-center}
 .hero-section .hero-content .banner-text.banner-dark-bg h1{  @apply text-2xl md:text-[1.75rem] mb-1.5 font-normal}
@@ -133,7 +133,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
 .location p{ @apply mr-2 absolute rounded-lg -left-4 top-[0px] sm:top-[2px] xl:top-1}
 .search-bx .whitespace-nowrap{  @apply text-white !font-normal py-0 }
-.location{ @apply  border-b border-[#d8d8d8]  mt-[1.5rem] }
+.location{ @apply  border-b border-[#d8d8d8]  mb-[1rem] }
 .location .result-inner .address-with-availablity {@apply mb-0}
 .result-inner {border: 1px solid #D31A21;}
 
@@ -238,7 +238,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 }
 .location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
 .location-name-miles h2 a{ @apply text-[1.475rem]  font-second-main-font}
-.location-name-miles h2 a{color: #000;}
+.location-name-miles h2 a{color: #D31A21;}
 
 .location-name-miles .distance{
   @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0
@@ -265,6 +265,11 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 }
 .icon-row .icon img, .icon-row .icon svg{
   @apply w-5 mr-0
+}
+.icon-row .icon img {
+ width: 1.5rem;
+ height: 1.6rem;
+ margin-right: 0px;
 }
 .icon-row h6{
   @apply font-normal text-red m-0 leading-5 text-base md:text-lg md:leading-5 mb-1.5
@@ -363,7 +368,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .title-with-link .box-title{ @apply mb-0}
 .title-with-link-1{@apply flex justify-between items-center mb-4}
 .title-with-link-1 .box-title{ @apply mb-0}
-.text-link{ @apply relative cursor-pointer capitalize text-red hover:text-black after:content-[""] after:bg-black after:h-px after:absolute after:left-0 after:bottom-0 after:w-0 after:transition-all after:duration-500 after:hover:w-full before:content-[""] before:bg-red before:h-px before:absolute before:left-0 before:bottom-0 before:w-full  }
+.text-link{ @apply relative cursor-pointer uppercase text-red hover:text-black after:content-[""] after:bg-black after:h-px after:absolute after:left-0 after:bottom-0 after:w-0 after:transition-all after:duration-500 after:hover:w-full before:content-[""] before:bg-red before:h-px before:absolute before:left-0 before:bottom-0 before:w-full  }
+.text-link {color: #D31A21;}
 .address-bx{@apply text-base }
 .address-bx, .phone-bx{ @apply text-base  }
 .address-bx h4{@apply text-red font-normal text-base uppercase }
@@ -658,7 +664,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{@apply left-1}
 }
 
-.container-custom ul{padding: 0 80px;}
+.container-custom ul{padding: 0 50px;}
 
 .country-banner img{width: 100%; padding: 18px 0px;}
 
@@ -870,8 +876,9 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 }
 
 /* location card */
-.address span { font-family: "gothic", Arial, sans-serif;
-  font-size: 1.2rem;
+.address span { 
+  /* font-family: "gothic", Arial, sans-serif; */
+  /* font-size: 1.2rem; */
   color: #000;}
 /* .result-inner .center-column .button-bx .btn{
   background-color: #D31A21;
@@ -893,9 +900,9 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   color: #f3f3f3;
 }
 .servicesoncard span{
-  font-family:  "gothic", Arial, sans-serif;
+  /* font-family:  "gothic", Arial, sans-serif; */
   color: #000;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
 }
 .left-listing .button-bx #view-more-button {width: 160px;}
 .button-bx .buttons {display: flex;
@@ -932,10 +939,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 }
 .address-cta .addsec {
   width: 66%;
-}
-.address-cta .address{
   padding-left: 28px;
 }
+/* .address-cta .address{
+  padding-left: 28px;
+} */
 .smalllocationcard .hours-services {
   margin-left: 28px;
 }
@@ -1105,8 +1113,10 @@ margin: 0 auto;
   .near-location {
     padding-left: 10px;
   }
+
+  /* location card */
   .phoneno span{  
-    font-size: 16px;
+    /* font-size: 16px; */
     color: #000;
     padding-left: 7px;
   }

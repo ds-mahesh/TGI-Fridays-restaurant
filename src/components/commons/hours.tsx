@@ -123,13 +123,13 @@ function sortByDay(week: Week): Week {
 
 const weekDays: any = {
   // "sunday": 0, // << if sunday is first day of week
-  monday: 1,
-  tuesday: 2,
-  wednesday: 3,
-  thursday: 4,
-  friday: 5,
-  saturday: 6,
-  sunday: 7,
+  // monday: 1,
+  // tuesday: 2,
+  // wednesday: 3,
+  // thursday: 4,
+  // friday: 5,
+  // saturday: 6,
+  // sunday: 7,
 };
 
 const renderHours = (week: Week, c_specific_day: any) => {
@@ -148,7 +148,7 @@ const renderHours = (week: Week, c_specific_day: any) => {
       }
       return a.map(format).join(s);
     }
-    function formatDate(date) {
+    function formatDate(date: string | number | Date) {
       let d = new Date(date),
         month = "" + (d.getMonth() + 1),
         day = "" + d.getDate(),
