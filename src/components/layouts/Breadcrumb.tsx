@@ -34,14 +34,14 @@ const BreadCrumbs = (props: data) => {
           data.push({
             name: regionNames.of(parents[i].name),
             slug: parents[i].slug,
-            count:parents[i].dm_directoryChildrenCount
+            count:parents[i].dm_baseEntityCount
           });
 
         } 
         else if (parents[i].meta.entityType.id == "ce_region") {
       
           data.push({ name: parents[i].name, slug:`${parents[i-1].slug}/${parents[i].slug}`, 
-          count:parents[i].dm_directoryChildrenCount});
+          count:parents[i].dm_baseEntityCount});
           parents[i].name = parents[i].name;
           parents[i].slug = `${parents[i-1].slug}/${parents[i].slug}`;
         } else if (parents[i].meta.entityType.id == "ce_city") {
@@ -51,7 +51,7 @@ const BreadCrumbs = (props: data) => {
           data.push({
             name: parents[i].name,
             slug: parents[i].slug,
-            count:parents[i].dm_directoryChildrenCount
+            count:parents[i].dm_baseEntityCount
           });
         }
       }

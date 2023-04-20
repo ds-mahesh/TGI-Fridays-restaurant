@@ -54,8 +54,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.dm_baseEntityCount",
       "dm_directoryChildren.dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
-      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug",
-      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.id"
+      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -146,29 +145,29 @@ const country: Template<TemplateRenderProps> = ({
 
           let detlslug1 = "";
 
-          // if (!res.slug) {
-          //   let slugString = res.id + " " + res.name;
-          //   let slug = slugString;
-          //   detlslug1 = `${slug}.html`;
-          // } else {
-          //   detlslug1 = slug + "/" + entity.slug + "/" + res.slug + ".html";
-          // }
-          // if (res.meta.entityType.id == 'ce_city') {
-          //   detlslug1 = "gb/" + detlslug1;
-          // } else {
-          //   detlslug1 = detlslug1;
-          // }
+          if (!res.slug) {
+            let slugString = res.id + " " + res.name;
+            let slug = slugString;
+            detlslug1 = `${slug}.html`;
+          } else {
+            detlslug1 = slug + "/" + entity.slug + "/" + res.slug + ".html";
+          }
+          if (res.meta.entityType.id == 'ce_city') {
+            detlslug1 = "gb/" + detlslug1;
+          } else {
+            detlslug1 = detlslug1;
+          }
 
-          // console.log(entity.name, res);
+          console.log(entity.name, res);
 
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
 
             if (!detl.slug) {
               let slugString = detl.id + " " + detl.name;
               let slug =slugString;
-              detlslug1 = detl.id;
+              detlslug1 = `${slug}.html`;
             } else {
-              detlslug= `${detl.id.toString()}.html`;
+              detlslug= `${detl.slug.toString()}.html`;
             }
 
             detlslug = detlslug1;
@@ -178,24 +177,8 @@ const country: Template<TemplateRenderProps> = ({
 
         })
       }
-      else if (entity.dm_baseEntityCount > 1) {
-        entity.dm_directoryChildren.map((res: any) => {
-
-          let detlslug1 = "";
-
-          if (!res.slug) {
-            let slugString = res.id + " " + res.name;
-            let slug = slugString;
-            detlslug1 = `${slug}.html`;
-          } else {
-            detlslug = slug + "/" + entity.slug + "/" + res.slug + ".html";
-          }
-          // if (res.meta.entityType.id == 'ce_city') {
-          //   detlslug1 = "gb/" + detlslug1;
-          // } else {
-          //   detlslug1 = detlslug1;
-          // }
-        })
+      else {
+        detlslug = slug + "/" + ".html";
       }
     }
 

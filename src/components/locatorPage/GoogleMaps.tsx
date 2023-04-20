@@ -170,7 +170,7 @@ function UnwrappedGoogleMaps({
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };
-  function zoomMapTo(zoomTo:any, centerToSet =false) {
+  function zoomMapTo(zoomTo:any, centerToSet :false) {
     currentMapZoom = map?.getZoom();
     const newZoom =
       currentMapZoom > zoomTo ? currentMapZoom - 1 : currentMapZoom + 1;

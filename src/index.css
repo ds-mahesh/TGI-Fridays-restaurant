@@ -183,9 +183,9 @@ table.day-hrs td{ @apply   text-right  }
   @apply bg-location-bg
 } */
 table.day-hrs .dayName {
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 1.75rem;
-  font-family: "gothic", Arial, sans-serif; 
+  /* font-family: "gothic", Arial, sans-serif;  */
   color: #000;}
 table.day-hrs tr:last-child td{  @apply border-b-0}
 table.day-hrs .dayName{ @apply text-xl md:text-xl capitalize pl-0 py-0 text-left }
@@ -233,12 +233,18 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 
 
 
-.location-name-miles{
+/* .location-name-miles{
   @apply relative pr-0 md:pr-[6.25rem] leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
+} */
+.location-name-miles{
+  @apply relative  leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
 }
 .location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
 .location-name-miles h2 a{ @apply text-[1.475rem]  font-second-main-font}
-.location-name-miles h2 a{color: #D31A21;}
+.location-name-miles h2 a{
+  text-transform: uppercase;
+  color: #D31A21;
+}
 
 .location-name-miles .distance{
   @apply sm:absolute sm:-top-0.5 right-0 text-base md:text-lg mt-1 sm:mt-0
@@ -925,9 +931,10 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   /* ---------------- */
   .fliter-sec .useMyLocation .underline{color: #000; font-size: 17px;}
 
-.hours-info span {font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
-  font-size: 1.2rem;
-  color: #000;} 
+.hours-info span {
+  /* font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
+  font-size: 1.2rem; */
+  color: #D31A21;} 
 
 .location .button-bx {
   /* padding-left: 1.75rem; */
@@ -960,11 +967,20 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 /* near hours amenities */
 .hoursamenities {padding-left: 25px;}
 table.day-hrs .time-b {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.75rem;
   font-family: "gothic", Arial, sans-serif;
   color: #000;
+  padding: 0 15px;
 }
+
+/* .mainhoursamenities .hours .hours-sec .hours-div .table.day-hrs .time-b {
+   font-size: 18px;
+   line-height: 1.75rem;
+   font-family: "gothic", Arial, sans-serif;
+   color: #000;
+
+} */
 .title-with-link-1 .box-title {font-weight: bold;}
 /* search-bar main div */
 
@@ -1132,6 +1148,7 @@ margin: 0 auto;
 
   /* state page */
   .container .region-list .storelocation-category a{
-    color: #D31A21;
+    color: #f3f3f3;
     border: 1px solid #D31A21;
   }
+  #region-page {background-color: #000;}

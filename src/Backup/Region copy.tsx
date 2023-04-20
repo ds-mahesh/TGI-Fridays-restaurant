@@ -299,7 +299,7 @@ const region: Template<TemplateRenderProps> = ({
           {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
           
 
-          <div className="content-list " id="region-page" >
+          <div className="content-list" >
             <div className="container">
             <div className="sec-title">
                 <h2 style={{ textAlign: "center" }}>
