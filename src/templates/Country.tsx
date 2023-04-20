@@ -41,7 +41,7 @@ export const config: TemplateConfig = {
       "address",
       "mainPhone",
       "slug",
-      // "c_bannerphoto",
+      "c_bannerphoto",
       // "c_locatorBannerImage",
       // "c_locatorBannerTitle",
       "dm_directoryParents.name",
@@ -125,16 +125,16 @@ const country: Template<TemplateRenderProps> = ({
     slug,
     _site,
     address,
-    // c_bannerphoto,
+    c_bannerphoto,
     c_locatorBannerImage,
     c_locatorBannerTitle,
     dm_directoryParents,
     dm_directoryChildren
   } = document;
 
-  // const Bannerimage=c_bannerphoto.map((link:any,i:any)=>(
-  //   <img key={i} src={link.url} alt={''}/>
-  // ))
+  const Bannerimage=c_bannerphoto.map((link:any,i:any)=>(
+    <img key={i} src={link.url} alt={''}/>
+  ))
 
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any,index:number) => {
     let detlslug;
@@ -225,12 +225,12 @@ const country: Template<TemplateRenderProps> = ({
           parents={dm_directoryParents}
           baseUrl={relativePrefixToRoot}
         ></BreadCrumbs>
-        {/* <div className="country-banner"> */}
-          {/* <div className="imgcount">
+        <div className="country-banner">
+          <div className="imgcount">
                {Bannerimage}
-          </div> */}
+          </div>
        
-          {/* <div className="country-search-bar" style={{}}>
+          <div className="country-search-bar" style={{}}>
             <SearchHeadlessProvider
                 experienceKey={AnswerExperienceConfig.experienceKey}
                 locale={AnswerExperienceConfig.locale}
@@ -245,7 +245,7 @@ const country: Template<TemplateRenderProps> = ({
           
               </SearchHeadlessProvider>
               </div>
-          </div> */}
+          </div>
         
 
         {/* <BreadCrumbs
