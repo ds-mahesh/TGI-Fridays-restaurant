@@ -41,7 +41,7 @@ export const config: TemplateConfig = {
       "address",
       "mainPhone",
       "slug",
-      // "c_bannerphoto",
+      "c_bannerphoto",
       // "c_locatorBannerImage",
       // "c_locatorBannerTitle",
       "dm_directoryParents.name",
@@ -132,9 +132,9 @@ const country: Template<TemplateRenderProps> = ({
     dm_directoryChildren
   } = document;
 
-  // const Bannerimage=c_bannerphoto.map((link:any,i:any)=>(
-  //   <img key={i} alt={''} src={link.url}/>
-  // ))
+  const Bannerimage=c_bannerphoto.map((link:any,i:any)=>(
+    <img key={i} alt={''} src={link.url}/>
+  ))
 
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any,index:number) => {
     let detlslug;
@@ -143,37 +143,38 @@ const country: Template<TemplateRenderProps> = ({
     if (typeof entity.dm_directoryChildren != "undefined") {
       if (entity.dm_baseEntityCount == 1) {
         entity.dm_directoryChildren.map((res: any) => {
-
+          res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
           let detlslug1 = "";
 
           if (!res.slug) {
-            let slugString = res.id + " " + res.name;
+            let detlslug1 = "";
+            let slugString = detl.id + " " + detl.name;
             let slug = slugString;
             detlslug1 = `${slug}.html`;
           } else {
-            detlslug1 = slug + "/" + entity.slug + "/" + res.slug + ".html";
+            detlslug1 = detl.id ;
           }
           // if (res.meta.entityType.id == 'ce_city') {
           //   detlslug1 = "gb/" + detlslug1;
           // } else {
           //   detlslug1 = detlslug1;
           // }
-
+          //  console.log(res,"detailpageurl")
           // console.log(entity.name, res);
 
-          res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
+          // res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
 
-            if (!detl.slug) {
-              let slugString = detl.id + " " + detl.name;
-              let slug =slugString;
-              detlslug1 = detl.id;
-            } else {
-              detlslug= `${detl.slug.toString()}.html`;
-            }
-
+          //   if (!detl.slug) {
+          //     let slugString = detl.id + " " + detl.name;
+          //     let slug =slugString;
+          //     detlslug1 = detl.id;
+          //   } else {
+          //     detlslug= `${detl.slug.toString()}.html`;
+          //   }
+            // console.log(detl,"detailpageurl")
             detlslug = detlslug1;
 
-          }) : detlslug = detlslug1;
+          }) : detlslug = `${res.slug.toString()}.html`;
 
 
         })
@@ -225,12 +226,12 @@ const country: Template<TemplateRenderProps> = ({
           parents={dm_directoryParents}
           baseUrl={relativePrefixToRoot}
         ></BreadCrumbs>
-        {/* <div className="country-banner">
+        <div className="country-banner">
           <div className="imgcount">
                {Bannerimage}
-          </div> */}
+          </div>
        
-          {/* <div className="country-search-bar" style={{}}>
+          <div className="country-search-bar" style={{}}>
             <SearchHeadlessProvider
                 experienceKey={AnswerExperienceConfig.experienceKey}
                 locale={AnswerExperienceConfig.locale}
@@ -245,7 +246,7 @@ const country: Template<TemplateRenderProps> = ({
           
               </SearchHeadlessProvider>
               </div>
-          </div> */}
+          </div>
         
 
         {/* <BreadCrumbs
