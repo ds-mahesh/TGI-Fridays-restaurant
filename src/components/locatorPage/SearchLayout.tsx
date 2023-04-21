@@ -358,8 +358,8 @@ const SearchLayout = (props: any): JSX.Element => {
                   <a className="underline " href='/gb.html'>Use the search above or <span className="font-second-main-font"> browse our directory</span></a>
                 </div> : ''}
               <div className="button-bx">
-                {/* <ViewMore className={" btn notHighlight button view-more"} idName={"view-more-button"} buttonLabel={"View More"} /> */}
-                <Pagination />
+                <ViewMore className={" btn notHighlight button view-more"} idName={"view-more-button"} buttonLabel={"View More"} />
+                {/* <Pagination /> */}
               </div>
               {/* <LocationBias /> */}
             </div>

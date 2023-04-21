@@ -26,11 +26,7 @@ const Header = (props: any) => {
         <div className="titlemenu">
           {Titlemenu}
         </div>
-        <div className="logo">
-          <a>
-            <img className="fridayslogo" src={props?._site?.logo.image.url} />
-          </a>
-        </div>
+        <div className="logo"><a><img className="fridayslogo" src={props?._site?.logo.image.url} alt={''}/> </a></div>
         <div className="headermenu">
           <nav className="navemenu">
             <ul className="menulist">

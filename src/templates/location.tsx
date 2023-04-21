@@ -303,7 +303,7 @@ const Location: Template<ExternalApiRenderData> = ({
   // ))
 
   const Totalreview = c_tGIReviews.totalOfReview.reting.map((e: any, index: number) => (
-    <img key={index} className="retingstar " src={e.url} alt={''} />
+    <img key={index} className="retingstar " src={e.url} alt={''}/>
   ))
 
 
@@ -313,7 +313,7 @@ const Location: Template<ExternalApiRenderData> = ({
       <div className="headingreview">{e.whoseReview.label}</div>
       <div className="retingimgcount">
         {e.reviewReting.map((link: any, index: any) => (
-          <img key={index} className="retingimage" src={link.url} alt={""} />
+          <img key={index} className="retingimage" src={link.url} alt={''}/>
         ))}
         <p>{e.reviewCount}</p>
       </div>
@@ -525,7 +525,7 @@ const Location: Template<ExternalApiRenderData> = ({
             <div className="maingetimage">
               <div className="getimagecard">
                 <div className="foodimage">
-                  <img src={c_getdirectioncardimage.image.url} alt={''} />
+                  <img src={c_getdirectioncardimage.image.url} alt={''}/>
                 </div>
                 <div className="mainfoodtext">
                   <div className="foodtext">
@@ -562,7 +562,7 @@ const Location: Template<ExternalApiRenderData> = ({
                   <p>{c_tGIHistory.description}</p>
                 </div>
                 <div className="tgilogo">
-                  <img src={c_tGIHistory.image.url} />
+                  <img src={c_tGIHistory.image.url} alt={''}/>
                 </div>
               </div>
             </div>

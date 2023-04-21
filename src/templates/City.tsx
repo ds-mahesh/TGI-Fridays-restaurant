@@ -463,7 +463,6 @@ const City: Template<TemplateRenderProps> = ({
                   </g>
                 </svg>{" "}
                 <div className="card-img-top rounded-lg" style={{ backgroundColor: "green", fontSize: "16px", paddingTop: "5px", paddingLeft: "10px", height: "30px", width: "120px" }}> View Details</div>
-
               </a>
             </div>
           </div>

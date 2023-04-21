@@ -80,7 +80,7 @@ const Footer = (props: any) => {
 				<div className="bootomfooter">
 					<div className="footerdata">
 						<div className="footerlogo">
-							<img style={{}} src={props?._site?.c_bootomFooterData.footerLogo.url} alt={''} />
+							<img src={props?._site?.c_bootomFooterData.footerLogo.url} alt={''}/>
 						</div>
 						<div className="footerdescription">
 							<p>{props?._site?.c_bootomFooterData.footerDescription}</p>
