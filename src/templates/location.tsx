@@ -87,7 +87,9 @@ export const config: TemplateConfig = {
       "c_viewAllAmenities",
       "c_tGIReviews",
       "deliveryHours",
-      "pickupHours"
+      "pickupHours",
+      "c_faq.question",
+      "c_faq.answer",
 
       // "c_onlineorderHours"
 
@@ -290,7 +292,8 @@ const Location: Template<ExternalApiRenderData> = ({
     c_dineMenues,
     c_tGIReviews,
     c_hoursAmenities,
-    pickupHours
+    pickupHours,
+    c_faq,
 
   } = document;
 
@@ -591,6 +594,7 @@ const Location: Template<ExternalApiRenderData> = ({
                 })}
               </div>
             </div>
+            <Faq faqs={c_faq} />
             <div className="nearby-sec">
               <div className="container">
                 <div className="sec-title"><h2 className="">{StaticData.NearStoretext}</h2></div>
