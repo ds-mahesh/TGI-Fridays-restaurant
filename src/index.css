@@ -688,11 +688,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .menulist li a:hover {color: #D31A21;}
 
 /* -------footer------------------- */
-.socialicons ul {display: flex; justify-content: center;}
+.socialicons {display: flex; justify-content: center; margin-top: 30px;}
 .sociallist li a{color: inherit;text-decoration: inherit;margin: 22px;padding-bottom: 18px; padding-top: 10px;}
 .sociallist li{display: flex;}
 
-.footermenus {display: flex; padding-left: 40px; padding-top: 40px; padding-bottom: 40px;}
+.footermenus {display: flex; padding-left: 40px; padding-top: 40px; padding-bottom: 40px; width: 1200px;}
 .footermenus p{ 
   font-size: 12px;
   color: #000;

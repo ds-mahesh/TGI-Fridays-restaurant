@@ -62,7 +62,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({
   } = document;
   return (
     <>
-      <PageLayout global={_site}>
+      <PageLayout _site={_site}>
         <div className="content-list">
           <div className="container">
             <div className="sec-title text-center">
