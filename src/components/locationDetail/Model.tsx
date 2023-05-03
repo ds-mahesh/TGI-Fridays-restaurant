@@ -41,7 +41,7 @@ function Model(props: any) {
   var day;
   return(
     <>
-  {props.holidayHours.map((res:any,index:Number)=>{
+  {props.holidayHours?.map((res:any,index:Number)=>{
     const d = new Date(res.date);
      day = d.getDay();
     let a,s,holidayDate:any;

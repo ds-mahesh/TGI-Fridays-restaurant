@@ -20,8 +20,6 @@ const metersToMiles = (meters: number) => {
 }
 let array = [];
 
-
-
 const LocationCard: CardComponent<Location> = ({ result }) => {
 
   let url = "";
