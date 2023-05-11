@@ -214,7 +214,7 @@ const Locator: Template<TemplateRenderProps> = ({
               sessionTrackingEnabled={true}
               endpoints={AnswerExperienceConfig.endpoints}
             >
-              {/* <LocationLayout /> */}
+              <LocationLayout />
               <SearchLayout _site={_site} />
             </SearchHeadlessProvider>
           </PageLayout>
