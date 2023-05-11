@@ -90,6 +90,7 @@ export const config: TemplateConfig = {
       "pickupHours",
       "c_faq.question",
       "c_faq.answer",
+      "c_bannerphoto",
 
       // "c_onlineorderHours"
 
@@ -294,6 +295,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_hoursAmenities,
     pickupHours,
     c_faq,
+    c_bannerphoto
 
   } = document;
 
@@ -305,6 +307,9 @@ const Location: Template<ExternalApiRenderData> = ({
   // </div>
   // ))
 
+  const Bannerimage=c_bannerphoto.map((link:any,i:any)=>(
+    <img className="" key={i} alt={''} src={link.url}/>
+  ))
   const Totalreview = c_tGIReviews.totalOfReview.reting.map((e: any, index: number) => (
     <img key={index} className="retingstar " src={e.url} alt={''} />
   ))
@@ -484,7 +489,7 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-            <SearchHeadlessProvider
+            {/* <SearchHeadlessProvider
               experienceKey={AnswerExperienceConfig.experienceKey}
               locale={AnswerExperienceConfig.locale}
               apiKey={AnswerExperienceConfig.apiKey}
@@ -494,13 +499,15 @@ const Location: Template<ExternalApiRenderData> = ({
               endpoints={AnswerExperienceConfig.endpoints}
             >
               <LocationLayout _site={_site} />
-            </SearchHeadlessProvider>
+            </SearchHeadlessProvider> */}
+            <div className="location-bannerimage">{Bannerimage}</div>
             <BreadCrumbs
               name={name}
               address={address}
               parents={dm_directoryParents}
               baseUrl={relativePrefixToRoot}
             ></BreadCrumbs>
+            
             {/* {Onlineorder} */}
             <div className="nameheading ">
               <div className='banner-text'>
@@ -573,7 +580,6 @@ const Location: Template<ExternalApiRenderData> = ({
               <div className="mainheading">{c_tGIAmenities.mainHeading}</div>
               <div className="Amenitiesnamelist container flex space-x-9">
                 {c_tGIAmenities.tginames.map((element: any, index: number) => {
-
                   return (
                     <>
                       <div className="amnamelist" key={index}>
@@ -590,7 +596,6 @@ const Location: Template<ExternalApiRenderData> = ({
                       </div>
                     </>
                   )
-
                 })}
               </div>
             </div>
