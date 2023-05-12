@@ -36,7 +36,8 @@ export const config: TemplateConfig = {
       "id",
       "uid",
       "meta",
-      "address"
+      "address",
+      "c_bannerphoto"
 
     ],
     // Defines the scope of entities that qualify for this stream.
@@ -167,8 +168,13 @@ const Locator: Template<TemplateRenderProps> = ({
   const {
     _site,
     name,
-    address
+    address,
+    c_bannerphoto
   } = document;
+  
+  const Bannerimage=c_bannerphoto.map((link:any,i:any)=>(
+    <img className="" key={i} alt={''} src={link.url}/>
+  ))
 
 
   let templateData = { document: document, __meta: __meta };
@@ -205,6 +211,9 @@ const Locator: Template<TemplateRenderProps> = ({
             {/* <div>Name:{name}</div>
         <div>Address:{address.line1}{address.line2} {address.city}</div>
         <div>{address.region}</div> */}
+        <div className="locator-bannerimage">{Bannerimage}</div>
+        <div className="banner-heading"><h1>FRIDAYS NEAR ME</h1></div>
+
             <SearchHeadlessProvider
               experienceKey={AnswerExperienceConfig.experienceKey}
               locale={AnswerExperienceConfig.locale}
@@ -214,7 +223,7 @@ const Locator: Template<TemplateRenderProps> = ({
               sessionTrackingEnabled={true}
               endpoints={AnswerExperienceConfig.endpoints}
             >
-              <LocationLayout />
+              {/* <LocationLayout /> */}
               <SearchLayout _site={_site} />
             </SearchHeadlessProvider>
           </PageLayout>

@@ -93,34 +93,20 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   <div className="address-cta flex">
                     <div className="addsec">
                       <Address address={address} />
-                      <div className="phoneno flex" >
+                    </div>
+                   
+                  </div>
+                  <div className="phoneno flex" >
                         <img src={Phonesvg} alt={''} />
                         <span> {mainPhone}</span></div>
-                    </div>
-                    <div className="button-bx">
-                      <div>
-                        <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
-                          data-ya-track={`viewStore -${result.rawData.name}`}
-                          eventName={`viewStore -${result.rawData.name}`}
-                          rel="noopener noreferrer"
-                        >
-                          {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
-                          {StaticData.StoreDetailbtn}
-                        </Link>
-                        {result.rawData.displayCoordinate ?
-                          <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
-                          : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
-                      </div>
-                    </div>
-                  </div>
 
                   {result.rawData.hours ? <>
                     <div className="mt-2">
                       <div className="hours-services">
-                        <div><Model
+                        {/* <div><Model
                         name={StaticData.Holdiay}
                         holidayHours={hours.holidayHours}
-                      /></div>
+                      /></div> */}
                         {/* <h6>Opening Hours</h6> */}
                         {result.rawData.hours?.reopenDate ? <>
                           <div className="icon"> <img className=" " src={timesvg} width="20" height="20" alt="" /> </div>
@@ -129,6 +115,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                           </div>
                         </>
                           : <>
+                          {/* <img src="https://www.freeiconspng.com/thumbs/timer-icon/timer-icon-15.png" width="20" height="20" alt=''/> */}
                             <div className="dropdown" style={{ position: "relative", display: "inline-block" }}>
                               <button onClick={show_hide} className=" flex open-now-string items-center" data-id={`main-shop-${result.rawData.id}`} >
                                 <OpenClose
@@ -143,13 +130,29 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                               </div>
                             </div>
                           </>}
-                        <div className="servicesoncard grid-container">
+                        {/* <div className="servicesoncard grid-container">
                           {c_hoursAmenities.tGIlist.map((e: any) =>
                             <span>*{e.label}</span>
                           )
                           }
-                        </div>
+                        </div> */}
+                        
                       </div>
+                      <div className="button-bx">
+                      <div className="btn-locationcard flex space-x-9">
+                        <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
+                          data-ya-track={`viewStore -${result.rawData.name}`}
+                          eventName={`viewStore -${result.rawData.name}`}
+                          rel="noopener noreferrer"
+                        >
+                          {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
+                          {StaticData.StoreDetailbtn}
+                        </Link>
+                        {result.rawData.displayCoordinate ?
+                          <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
+                          : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
+                      </div>
+                    </div>
 
                       {/* <div className={`storelocation-openCloseTime  capitalize hidden`}>
                     {hoursopen?

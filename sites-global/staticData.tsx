@@ -4,7 +4,7 @@ export const StaticData = {
     locator_breadcrumb:"Store Locator",
     FindLocationtext:"Location Results",
     FindLocationtext1:"Fridays Near Me",
-    Usemylocation:"Use my current location",
+    Usemylocation:"Use my location",
     Search:"Search",
     Brandname:"TGI Fridays",
     miles:"miles",

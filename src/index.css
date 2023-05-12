@@ -101,9 +101,10 @@ body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
 /* banner sec */
 .banner-sec{ @apply bg-gray-light py-16 mt-4}
 .banner-sec h1{ @apply text-3xl text-center uppercase }
-.locator-main{ @apply  mt-10  align-bottom w-full max-w-[92.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
+.locator-main{ @apply    align-bottom w-full max-w-[92.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
 .left-listing{ @apply w-full md:w-[30rem] lg:w-[38.6875rem] float-left }
-.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_38.6875rem)]  md:pl-8 float-right mt-2 md:mt-28}
+/* .map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_38.6875rem)]  md:pl-8 float-right mt-2 md:mt-28} */
+.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_38.6875rem)]  md:pl-8 float-right }
 .locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
 .hero-section .hero-content .banner-text.banner-dark-bg{ @apply  border-l-0 inline-block flex flex-col items-center p-4      rounded-lg backdrop-blur-sm bg-Dark-red mx-auto w-[340px] sm:w-[500px] px-2.5 text-center}
 .hero-section .hero-content .banner-text.banner-dark-bg h1{  @apply text-2xl md:text-[1.75rem] mb-1.5 font-normal}
@@ -130,7 +131,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .search-field{@apply flex relative  }
 .search-bx .search-btn{@apply absolute top-0 rounded-none right-0  text-white p-2 w-12 h-12 text-center bg-red hover:bg-hover-btn}  
 .search-bx .search-btn svg{ @apply mx-auto}
-.search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
+.search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
 .location p{ @apply mr-2 absolute rounded-lg -left-4 top-[0px] sm:top-[2px] xl:top-1}
 .search-bx .whitespace-nowrap{  @apply text-white !font-normal py-0 }
 .location{ @apply  border-b border-[#d8d8d8]  mb-[1rem] }
@@ -154,7 +155,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .fliter-sec{ @apply mt-2 flex items-start sm:items-center justify-start sm:justify-between  flex-col sm:flex-row}
 .location .result-inner .green-dot, .location .result-inner .red-dot{ @apply  flex justify-center items-center flex-row-reverse  }
 .location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
-.location-with-filter{ @apply mb-6 flex items-center justify-between text-sm leading-5}
+.location-with-filter{ @apply mt-4 flex items-center justify-between text-sm leading-5}
 .location-with-filter h1{@apply text-lg font-normal text-dark-gray my-0 font-second-main-font text-[1.75rem]}
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
@@ -164,7 +165,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
      border-black border  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
 .button-bx .btn + .btn{  @apply mt-2 sm:mt-0}     
 /* .button-bx .btn:hover svg{@apply fill-white  } */
-.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_1rem)]}
+.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_18rem)]}
 .scrollbar-container.ps--active-y{ @apply pr-6}
 body .ps:hover .ps__rail-y{@apply opacity-100}
 body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
@@ -874,6 +875,22 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   /* position: inherit; */
   margin-top: 12px;
 }
+.locator-bannerimage img {
+  height: 300px;
+  width: 100%;
+  padding-top: 10px;
+}
+.banner-heading {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.banner-heading h1{
+  margin-top: -170px;
+  color: #f3f3f3;
+  font-weight: 700;
+  position: absolute;
+}
 
 
 .amnamelist .amenitiesname {font-family: "gothic-bold", Arial, sans-serif; text-transform: uppercase; margin-top: 0.75em; font-weight: bold; font-size: 16px; color: black;}
@@ -929,6 +946,18 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .button-bx .buttons {display: flex;
   justify-content: center;}
 
+ .smalllocationcard .button-bx .btn-locationcard {
+  display: flex;
+  width: 100%;
+  padding-left: 26px;
+} 
+
+.search-usemylocation {
+  background-color: red;
+  height: 140px;
+  width: 500px;
+}
+
   /* nearby    */
   .nearby-card .button-bx {display: flex;}
 
@@ -944,8 +973,19 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   }
 
   /* ---------------- */
-  .fliter-sec .useMyLocation .underline{color: #000; font-size: 17px;}
-
+  .fliter-sec .useMyLocation .underline{color: #f3f3f3; font-size: 17px;}
+  .search-usemylocation .fliter-sec h2 {
+    color: #f3f3f3;
+  }
+ .fliter-sec {
+  padding: 14px 21px;
+ }
+ .locator-main .search-field {
+  padding: 0px 21px;
+ }
+ .locator-main .search-field .search-btn {
+ right: 21px;
+ }
 .hours-info span {
   /* font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
   font-size: 1.2rem; */
@@ -1043,7 +1083,7 @@ margin: 12px;
 .location-search-bar {display: flex; display: flex;padding: 25px 70px;}
 .search-locationpage  {display: flex;}
 
-.location-search-bx .search-btn{@apply top-0 rounded-none right-0  text-white p-2 w-32 text-center  hover:bg-hover-btn}  
+.location-search-bx .search-btn{@apply top-0 rounded-none   text-white p-2 w-32 text-center  hover:bg-hover-btn}  
 .location-search-bx .search-btn svg{ @apply mx-auto}
 .location-search-field button{background-color: #D31A21; height: 45px;}
 .location-search-field input{height: 45px; width: 300px; font-family: "gothic-bold", Arial, sans-serif;
@@ -1053,9 +1093,13 @@ margin: 12px;
   text-transform: uppercase;
   font-size: 28px;
 }
+
 .location-search-field {display: flex;}
 .location-search-field input{@apply    py-2 sm:py-4  pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
 /* .inputsearch {width: 172px;} */
+.locator-main .search-bx .search-field .mb-2 {
+  width: 100%;
+}
 .or {font-family: "gothic-bold", Arial, sans-serif;
   line-height: 1.75rem;
   font-weight: 600;
