@@ -69,7 +69,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
         <div className="center-column">
           <div className="lp-param-results lp-subparam-hours">
             <div className="location-name-miles icon-row">
-              <div className="icon text-black relative"> <img className=" " src="https://th.bing.com/th/id/OIP.Bi9ogpKNDPfaQb0eTwI-iwHaHa?w=202&h=202&c=7&r=0&o=5&pid=1.7" width="20" height="20"
+              <div className="icon text-black relative"> <img className=" " src="https://webstockreview.net/images/document-clipart-disorderly-1.png" width="20" height="20"
                 alt={''} />
                 {/* <span className="map-count">D</span> */}
                 </div>

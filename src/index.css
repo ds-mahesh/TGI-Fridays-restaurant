@@ -238,13 +238,22 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
   @apply relative pr-0 md:pr-[6.25rem] leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
 } */
 .location-name-miles{
-  @apply relative  leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col 
+  /* @apply relative  leading-5 mb-2.5 flex !flex-row justify-between items-center md:flex-col  */
+  @apply relative  leading-5 mb-2.5 flex !flex-row  items-center md:flex-col
 }
-.location-name-miles h2{  @apply text-3xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
-.location-name-miles h2 a{ @apply text-[1.475rem]  font-second-main-font}
+.location-name-miles h2{  @apply text-6xl md:text-lg leading-[1.375rem] text-red md:leading-tight}
+.location-name-miles h2 {
+  width: 72%;
+}
+.location-name-miles h2 a{ @apply  font-second-main-font}
 .location-name-miles h2 a{
-  text-transform: uppercase;
-  color: #D31A21;
+  font-size: 2rem;
+  color: #000;
+}
+.telephone {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: Roboto,Georgia,Arial,sans-serif;
 }
 
 .location-name-miles .distance{
@@ -297,6 +306,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 .gm-ui-hover-effect{@apply !top-2  !right-4}
 .gm-ui-hover-effect span{@apply !w-6 !h-6 }
 .open-now-string svg{  @apply fill-gray-dark}
+.open-now-string {padding-left: 26px;}
 
 
 .closeing-div .opendot{ @apply  text-lg font-second-main-font text-gray relative before:hidden after:hidden  after:bg-[#338833] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
@@ -487,13 +497,26 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .nearby-sec{@apply bg-transparent md:bg-light-grey w-full pt-7 pb-0 md:py-[3.75rem] }
 .nearby-sec-inner{@apply sm:mx-auto sm:max-w-[33.5rem] lg:mx-auto lg:max-w-none flex flex-col lg:flex-row gap-4 justify-center pb-0 xl:pb-0 }
 .nearby-sec .splide__slide{@apply xl:px-4}
-.nearby-sec-inner {padding: 0px 110px;}
-.nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-3 md:p-5 border border-box-border
+.nearby-sec-inner {padding: 0px 50px;}
+/* .nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-2 md:p-2 border border-box-border
+} */
+.nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-2 md:p-2 border border-box-border}
+.nearby-sec-inner .nearby-card .content-col {
+  padding-left: 26px;
+}
+.nearby-telephone{
+  padding-bottom: 10px;
 }
 .nearby-card .red-dot{ @apply !justify-start}
 .nearby-card .icon-row{ @apply pl-0}
 .nearby-card .OpenDot{ @apply  font-second-main-font  text-lg}
-.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-black }
+/* .nearby-card h2 a{ @apply font-second-main-font  !text-xl text-black } */
+.nearby-card h2 a{
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family:  Roboto,Georgia,Arial,sans-serif;;
+
+}
 .nearby-card .distance{ @apply absolute right-0 md:right-2 top-0 md:-top-0.5}
 .near-address{ @apply flex mt-2 items-start min-h-[90px]}
 .nearby-card .address { @apply text-lg }

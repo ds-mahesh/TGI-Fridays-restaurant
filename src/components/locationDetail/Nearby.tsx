@@ -68,7 +68,8 @@ export default function Nearby(props: any) {
             <>
               {/* <SplideSlide key={index}> */}
               <div className="nearby-card" key={index}>
-                <div className="location-name-miles icon-row">
+                <div className="location-name-miles icon-row flex space-x-2">
+                  <img src="https://th.bing.com/th/id/OIP.jI9rruGSAQNGmMicjyVJFAHaI7?pid=ImgDet&rs=1" alt="" height="20" width="20" />
                   <h2><Link className="inline-block notHighlight" href={`/${location.data.id}`}
                     data-ya-track={`${location.data.name}`}
                     eventName={`${location.data.name}`}
@@ -83,7 +84,12 @@ export default function Nearby(props: any) {
                 <div className="icon-row content-col">
                   <Address address={location.data.address} />
                 </div>
-                <div className="icon-row closeing-div">
+                <div className="nearby-telephone flex space-x-2">
+                  <img src="https://th.bing.com/th/id/R.b3e6b77621eee17c8e71200a645bc86c?rik=%2bV15I8fAFFQPLQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_286076.png&ehk=fo8Zy8rYG7B%2bgx53Zx2vljsMPUbauUtRS9thGIR%2bBL8%3d&risl=&pid=ImgRaw&r=0" alt="" height="20" width="20"/>
+                <span className="telephone">Telephone</span>
+                </div>
+                <span style={{paddingLeft:"26px",fontSize:"1.25rem"}}>{location.data.mainPhone}</span>
+                <div className="icon-row closeing-div flex space-x-2">
                   {location.data.hours ?
                     <div className="flex open-now-string items-center " data-id={`main-shop-${location.data.id}`} >
                       <OpenClose timezone={location.data.timezone} hours={location.data.hours} deliveryHours={location.data.hours}></OpenClose>
