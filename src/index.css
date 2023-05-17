@@ -247,7 +247,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 }
 .location-name-miles h2 a{ @apply  font-second-main-font}
 .location-name-miles h2 a{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #000;
 }
 .telephone {
